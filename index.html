@@ -5,6 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Small World English Center | Trung Tâm Tiếng Anh Premium</title>
 <meta name="description" content="Small World English Center — Trung tâm tiếng Anh cao cấp với giáo viên bản ngữ, chương trình chuẩn quốc tế cho trẻ em, học sinh và người đi làm."/>
+<meta property="og:title" content="Small World English Center | Trung Tâm Tiếng Anh Long Xuyên"/>
+<meta property="og:description" content="Trung tâm tiếng Anh cao cấp tại Long Xuyên, An Giang. Giáo viên bản ngữ, cam kết đầu ra, học thử miễn phí."/>
+<meta property="og:image" content="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=1200&q=80"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://smallworld.com"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"EducationalOrganization","name":"Small World English Center","description":"Trung tâm tiếng Anh cao cấp tại Long Xuyên, An Giang","url":"https://smallworld.com","telephone":"0901234567","address":{"@type":"PostalAddress","streetAddress":"01 Tôn Đức Thắng","addressLocality":"Long Xuyên","addressRegion":"An Giang","addressCountry":"VN"},"sameAs":["https://facebook.com/smallworldlongxuyen"]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
 <style>
@@ -339,6 +346,110 @@ footer{background:var(--dark);color:#fff;padding:60px 0 24px;}
   .section-title { font-size: 1.4rem; }
   .btn { padding: 12px 20px; font-size: .88rem; }
 }
+
+/* ── HERO REAL IMAGE ── */
+.hero {
+  background-image: url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=1600&q=80');
+  background-size: cover;
+  background-position: center top;
+  position: relative;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(74,31,112,.92) 0%, rgba(107,47,160,.85) 50%, rgba(139,63,192,.8) 100%);
+  z-index: 0;
+}
+.hero .container { position: relative; z-index: 2; }
+.hero::before { z-index: 1; }
+
+/* ── COURSE HEADER IMAGES ── */
+.course-card-header { background-size: cover !important; background-position: center !important; position: relative; }
+.course-card-header::before { content: ''; position: absolute; inset: 0; border-radius: 0; }
+
+/* ── PHOTO GALLERY ── */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto;
+  gap: 12px;
+}
+.gallery-item {
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+.gallery-item img {
+  width: 100%; height: 220px; object-fit: cover;
+  transition: transform .4s ease;
+  display: block;
+}
+.gallery-item:hover img { transform: scale(1.05); }
+.gallery-item.large { grid-row: span 2; }
+.gallery-item.large img { height: 100%; min-height: 452px; }
+.gallery-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(74,31,112,.7) 0%, transparent 60%);
+  opacity: 0; transition: opacity .3s ease;
+  display: flex; align-items: flex-end; padding: 16px;
+}
+.gallery-item:hover .gallery-overlay { opacity: 1; }
+.gallery-overlay span { color: #fff; font-family: var(--font-head); font-size: .85rem; font-weight: 600; }
+
+/* ── VIDEO PLACEHOLDER ── */
+.video-wrapper {
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(135deg, var(--purple-dark) 0%, var(--purple) 100%);
+  cursor: pointer;
+  box-shadow: 0 20px 60px rgba(107,47,160,.35);
+}
+.video-thumb { width: 100%; height: 380px; object-fit: cover; display: block; filter: brightness(.6); }
+.video-play-btn {
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  width: 80px; height: 80px; border-radius: 50%;
+  background: rgba(255,255,255,.95);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 28px; padding-left: 5px;
+  box-shadow: 0 8px 32px rgba(0,0,0,.3);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.video-wrapper:hover .video-play-btn { transform: translate(-50%,-50%) scale(1.1); box-shadow: 0 12px 40px rgba(0,0,0,.4); }
+.video-badge {
+  position: absolute; bottom: 24px; left: 24px;
+  background: rgba(255,255,255,.95); border-radius: 10px;
+  padding: 10px 16px; font-family: var(--font-head); font-size: .82rem; font-weight: 600; color: var(--purple-dark);
+}
+
+/* ── TEACHER CARDS WITH PHOTO ── */
+.teacher-photo {
+  width: 100px; height: 100px; border-radius: 50%;
+  object-fit: cover; object-position: top;
+  margin: 0 auto 16px;
+  border: 4px solid var(--purple-xlight);
+  display: block;
+}
+
+/* ── BLOG REAL IMAGES ── */
+.blog-img-real { height: 180px; overflow: hidden; }
+.blog-img-real img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
+.blog-card:hover .blog-img-real img { transform: scale(1.05); }
+
+@media(max-width:768px){
+  .gallery-grid { grid-template-columns: repeat(2,1fr); }
+  .gallery-item.large { grid-row: span 1; }
+  .gallery-item.large img { min-height: 220px; height: 220px; }
+  .video-thumb { height: 240px; }
+  .video-play-btn { width: 60px; height: 60px; font-size: 22px; }
+}
+@media(max-width:480px){
+  .gallery-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .gallery-item img { height: 160px; }
+}
 </style>
 </head>
 <body>
@@ -439,7 +550,7 @@ footer{background:var(--dark);color:#fff;padding:60px 0 24px;}
       </div>
       <div class="grid-4">
         <div class="course-card fade-up" onclick="goPage('course-kids')">
-          <div class="course-card-header" style="background:linear-gradient(135deg,#FF6B9D 0%,#FF8E53 100%);">
+          <div class="course-card-header" style="background:linear-gradient(135deg,rgba(255,107,157,.7) 0%,rgba(255,142,83,.7) 100%),url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&q=80') center/cover;">
             <div class="course-icon">🧒</div>
             <div class="course-name" data-i18n="c1_name">Tiếng Anh Trẻ Em</div>
             <div class="course-age" data-i18n="c1_age">4 – 12 tuổi</div>
@@ -455,7 +566,7 @@ footer{background:var(--dark);color:#fff;padding:60px 0 24px;}
           </div>
         </div>
         <div class="course-card fade-up" onclick="goPage('course-comm')">
-          <div class="course-card-header" style="background:linear-gradient(135deg,#6B2FA0 0%,#9B5FD0 100%);">
+          <div class="course-card-header" style="background:linear-gradient(135deg,rgba(107,47,160,.75) 0%,rgba(155,95,208,.75) 100%),url('https://images.unsplash.com/photo-1529390079861-591de354faf5?w=600&q=80') center/cover;">
             <div class="course-icon">💬</div>
             <div class="course-name" data-i18n="c2_name">Tiếng Anh Giao Tiếp</div>
             <div class="course-age" data-i18n="c2_age">13 tuổi trở lên</div>
@@ -471,7 +582,7 @@ footer{background:var(--dark);color:#fff;padding:60px 0 24px;}
           </div>
         </div>
         <div class="course-card fade-up" onclick="goPage('course-ielts')">
-          <div class="course-card-header" style="background:linear-gradient(135deg,#1A1028 0%,#4A1F70 100%);">
+          <div class="course-card-header" style="background:linear-gradient(135deg,rgba(26,16,40,.8) 0%,rgba(74,31,112,.8) 100%),url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&q=80') center/cover;">
             <div class="course-icon">📝</div>
             <div class="course-name" data-i18n="c3_name">IELTS / TOEFL</div>
             <div class="course-age" data-i18n="c3_age">Luyện thi cấp tốc</div>
@@ -487,7 +598,7 @@ footer{background:var(--dark);color:#fff;padding:60px 0 24px;}
           </div>
         </div>
         <div class="course-card fade-up" onclick="goPage('course-biz')">
-          <div class="course-card-header" style="background:linear-gradient(135deg,#D4A017 0%,#A07810 100%);">
+          <div class="course-card-header" style="background:linear-gradient(135deg,rgba(212,160,23,.8) 0%,rgba(160,120,16,.8) 100%),url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80') center/cover;">
             <div class="course-icon">💼</div>
             <div class="course-name" data-i18n="c4_name">Business English</div>
             <div class="course-age" data-i18n="c4_age">Người đi làm & Doanh nhân</div>
@@ -556,6 +667,36 @@ footer{background:var(--dark);color:#fff;padding:60px 0 24px;}
     </div>
   </section>
 
+
+  <!-- VIDEO SECTION -->
+  <section style="background:var(--gray-light);">
+    <div class="container">
+      <div class="grid-2" style="align-items:center;gap:56px;">
+        <div>
+          <div class="section-tag fade-up" data-i18n="video_tag">Video Giới Thiệu</div>
+          <h2 class="section-title fade-up" data-i18n="video_title">Khám Phá Trung Tâm <span>Small World</span></h2>
+          <p class="section-sub fade-up" style="margin-bottom:28px;" data-i18n="video_sub">Xem video để hiểu hơn về môi trường học tập, đội ngũ giáo viên và phương pháp giảng dạy độc đáo của chúng tôi.</p>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:14px;" class="fade-up">
+            <li style="display:flex;gap:12px;align-items:center;font-size:.9rem;color:var(--gray-text);"><span style="width:32px;height:32px;border-radius:50%;background:var(--purple-xlight);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;">🎓</span><span data-i18n="vf1">Lớp học hiện đại, trang thiết bị đầy đủ</span></li>
+            <li style="display:flex;gap:12px;align-items:center;font-size:.9rem;color:var(--gray-text);"><span style="width:32px;height:32px;border-radius:50%;background:var(--purple-xlight);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;">👨‍🏫</span><span data-i18n="vf2">Giáo viên bản ngữ tận tâm, năng động</span></li>
+            <li style="display:flex;gap:12px;align-items:center;font-size:.9rem;color:var(--gray-text);"><span style="width:32px;height:32px;border-radius:50%;background:var(--purple-xlight);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;">😊</span><span data-i18n="vf3">Học viên tự tin, vui vẻ trong từng buổi học</span></li>
+          </ul>
+          <button class="btn btn-primary fade-up" style="margin-top:28px;" onclick="openModal()" data-i18n="video_cta">Đăng Ký Tham Quan Miễn Phí</button>
+        </div>
+        <div class="fade-up">
+          <div class="video-wrapper" onclick="playVideo(this)" id="videoBlock">
+            <img class="video-thumb" src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=900&q=80" alt="Small World English Center classroom" loading="lazy"/>
+            <div class="video-play-btn">▶</div>
+            <div class="video-badge">🎬 Video giới thiệu trung tâm</div>
+          </div>
+          <p style="font-size:.78rem;color:var(--gray-text);margin-top:10px;text-align:center;">
+            💡 Bạn có video YouTube? <a href="mailto:hello@smallworld.com" style="color:var(--purple);font-weight:600;">Liên hệ để cập nhật</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Stats -->
   <section class="stats-section">
     <div class="container">
@@ -604,6 +745,44 @@ footer{background:var(--dark);color:#fff;padding:60px 0 24px;}
     </div>
   </section>
 
+
+  <!-- PHOTO GALLERY -->
+  <section style="padding:80px 0;">
+    <div class="container">
+      <div class="section-head fade-up">
+        <div class="section-tag" data-i18n="gallery_tag">Hình Ảnh Thực Tế</div>
+        <h2 class="section-title" data-i18n="gallery_title">Không Gian Học Tập <span>Hiện Đại</span></h2>
+        <p class="section-sub" data-i18n="gallery_sub">Môi trường học tập chuyên nghiệp, thân thiện — nơi học viên tự tin phát triển mỗi ngày</p>
+      </div>
+      <div class="gallery-grid fade-up">
+        <div class="gallery-item large">
+          <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=800&q=80" alt="Lớp học Small World" loading="lazy"/>
+          <div class="gallery-overlay"><span>🏫 Lớp học chính</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1529390079861-591de354faf5?w=600&q=80" alt="Học viên giao tiếp" loading="lazy"/>
+          <div class="gallery-overlay"><span>💬 Lớp giao tiếp</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&q=80" alt="Lớp trẻ em" loading="lazy"/>
+          <div class="gallery-overlay"><span>🧒 Lớp thiếu nhi</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80" alt="Business English" loading="lazy"/>
+          <div class="gallery-overlay"><span>💼 Business English</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&q=80" alt="Luyện thi IELTS" loading="lazy"/>
+          <div class="gallery-overlay"><span>📝 Luyện thi IELTS</span></div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:32px;" class="fade-up">
+        <p style="color:var(--gray-text);font-size:.9rem;margin-bottom:16px;" data-i18n="gallery_note">📸 Ảnh từ thư viện miễn phí — sẽ được thay bằng ảnh thực tế của trung tâm</p>
+        <button class="btn btn-outline" onclick="openModal()" data-i18n="gallery_cta">Tham Quan Trực Tiếp →</button>
+      </div>
+    </div>
+  </section>
+
   <!-- Blog Preview -->
   <section style="background:var(--gray-light);">
     <div class="container">
@@ -613,7 +792,7 @@ footer{background:var(--dark);color:#fff;padding:60px 0 24px;}
       </div>
       <div class="grid-3">
         <div class="blog-card fade-up">
-          <div class="blog-img">📚</div>
+          <div class="blog-img-real"><img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=600&q=80" alt="IELTS Writing tips" loading="lazy"/></div>
           <div class="blog-body">
             <div class="blog-meta">12 tháng 5, 2026 · IELTS Tips</div>
             <div class="blog-title" data-i18n="b1">7 Bí Quyết Viết IELTS Writing Task 2 Đạt Band 7.0+</div>
@@ -622,7 +801,7 @@ footer{background:var(--dark);color:#fff;padding:60px 0 24px;}
           </div>
         </div>
         <div class="blog-card fade-up">
-          <div class="blog-img">🎮</div>
+          <div class="blog-img-real"><img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&q=80" alt="Kids learning English" loading="lazy"/></div>
           <div class="blog-body">
             <div class="blog-meta">5 tháng 5, 2026 · Trẻ Em</div>
             <div class="blog-title" data-i18n="b2">Dạy Tiếng Anh Cho Trẻ Qua Game: Phương Pháp TPR Hiệu Quả</div>
@@ -631,7 +810,7 @@ footer{background:var(--dark);color:#fff;padding:60px 0 24px;}
           </div>
         </div>
         <div class="blog-card fade-up">
-          <div class="blog-img">💼</div>
+          <div class="blog-img-real"><img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&q=80" alt="Business English meeting" loading="lazy"/></div>
           <div class="blog-body">
             <div class="blog-meta">28 tháng 4, 2026 · Business English</div>
             <div class="blog-title" data-i18n="b3">10 Cụm Từ Tiếng Anh Chuyên Nghiệp Dùng Trong Meeting</div>
@@ -951,42 +1130,42 @@ footer{background:var(--dark);color:#fff;padding:60px 0 24px;}
       </div>
       <div class="grid-3">
         <div class="teacher-card fade-up">
-          <div class="teacher-avatar">🇺🇸</div>
+          <img class="teacher-photo" src="https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?w=200&q=80" alt="James Mitchell" loading="lazy"/>
           <div class="teacher-name">James Mitchell</div>
           <div class="teacher-title">Head of IELTS Department</div>
           <div class="teacher-bio">IELTS 8.5 | 12 năm kinh nghiệm luyện thi | Từng giảng dạy tại IDP Australia</div>
           <div class="teacher-tags"><span class="teacher-tag">IELTS</span><span class="teacher-tag">CELTA</span><span class="teacher-tag">Cambridge</span></div>
         </div>
         <div class="teacher-card fade-up">
-          <div class="teacher-avatar">🇬🇧</div>
+          <img class="teacher-photo" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&q=80" alt="Sarah Thompson" loading="lazy"/>
           <div class="teacher-name">Sarah Thompson</div>
           <div class="teacher-title">Kids Program Director</div>
           <div class="teacher-bio">DELTA | 9 năm dạy trẻ em | Chuyên gia phương pháp TPR và Story-telling</div>
           <div class="teacher-tags"><span class="teacher-tag">Kids</span><span class="teacher-tag">DELTA</span><span class="teacher-tag">TPR</span></div>
         </div>
         <div class="teacher-card fade-up">
-          <div class="teacher-avatar">🇨🇦</div>
+          <img class="teacher-photo" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=200&q=80" alt="Michael Brown" loading="lazy"/>
           <div class="teacher-name">Michael Brown</div>
           <div class="teacher-title">Business English Lead</div>
           <div class="teacher-bio">MBA Harvard | 10 năm trong môi trường kinh doanh quốc tế | Chuyên gia đào tạo doanh nhân</div>
           <div class="teacher-tags"><span class="teacher-tag">Business</span><span class="teacher-tag">MBA</span><span class="teacher-tag">Corporate</span></div>
         </div>
         <div class="teacher-card fade-up">
-          <div class="teacher-avatar">🇦🇺</div>
+          <img class="teacher-photo" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&q=80" alt="Emily Clarke" loading="lazy"/>
           <div class="teacher-name">Emily Clarke</div>
           <div class="teacher-title">Communicative English Expert</div>
           <div class="teacher-bio">CELTA | 7 năm kinh nghiệm | Chuyên gia pronunciation và accent reduction</div>
           <div class="teacher-tags"><span class="teacher-tag">Speaking</span><span class="teacher-tag">CELTA</span><span class="teacher-tag">Pronunciation</span></div>
         </div>
         <div class="teacher-card fade-up">
-          <div class="teacher-avatar">🇳🇿</div>
+          <img class="teacher-photo" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&q=80" alt="David Wilson" loading="lazy"/>
           <div class="teacher-name">David Wilson</div>
           <div class="teacher-title">Senior IELTS Instructor</div>
           <div class="teacher-bio">IELTS 8.0 | 8 năm kinh nghiệm | Đã đào tạo 200+ học viên đạt band 7.0+</div>
           <div class="teacher-tags"><span class="teacher-tag">IELTS</span><span class="teacher-tag">Writing</span><span class="teacher-tag">Speaking</span></div>
         </div>
         <div class="teacher-card fade-up">
-          <div class="teacher-avatar">🇿🇦</div>
+          <img class="teacher-photo" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=80" alt="Rebecca Adams" loading="lazy"/>
           <div class="teacher-name">Rebecca Adams</div>
           <div class="teacher-title">General English Instructor</div>
           <div class="teacher-bio">CELTA | 6 năm kinh nghiệm | Chuyên gia dạy người mới bắt đầu và intermediate</div>
@@ -1051,7 +1230,7 @@ footer{background:var(--dark);color:#fff;padding:60px 0 24px;}
           </div>
         </div>
         <div class="blog-card fade-up" data-cat="tips">
-          <div class="blog-img">🧠</div>
+          <div class="blog-img-real"><img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&q=80" alt="Study method" loading="lazy"/></div>
           <div class="blog-body">
             <div class="blog-meta">20/04/2026 · Tips</div>
             <div class="blog-title">Spaced Repetition: Phương Pháp Nhớ Từ Vựng Gấp 5 Lần</div>
@@ -1060,7 +1239,7 @@ footer{background:var(--dark);color:#fff;padding:60px 0 24px;}
           </div>
         </div>
         <div class="blog-card fade-up" data-cat="ielts">
-          <div class="blog-img">🎧</div>
+          <div class="blog-img-real"><img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=600&q=80" alt="IELTS Listening" loading="lazy"/></div>
           <div class="blog-body">
             <div class="blog-meta">15/04/2026 · IELTS</div>
             <div class="blog-title">IELTS Listening: Bẫy Thường Gặp & Cách Tránh</div>
@@ -1069,7 +1248,7 @@ footer{background:var(--dark);color:#fff;padding:60px 0 24px;}
           </div>
         </div>
         <div class="blog-card fade-up" data-cat="tips">
-          <div class="blog-img">📱</div>
+          <div class="blog-img-real"><img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&q=80" alt="English learning apps" loading="lazy"/></div>
           <div class="blog-body">
             <div class="blog-meta">08/04/2026 · Tips</div>
             <div class="blog-title">5 App Học Tiếng Anh Miễn Phí Tốt Nhất 2026</div>
@@ -1452,6 +1631,15 @@ const translations = {
     v6_t:'Minh Bạch & Trung Thực',v6_d:'Cam kết rõ ràng — nếu không đạt, hoàn tiền hoặc học lại.',
     cert_tag:'Chứng Nhận & Đối Tác',cert_title:'Được Công Nhận <span>Quốc Tế</span>',
     cert1:'Trung Tâm Luyện Thi Chính Thức',cert2:'Đối Tác IELTS Chính Thức',cert3:'Cơ Sở Giáo Dục Được Cấp Phép',cert4:'Được đánh giá 4.9★ trên Google',
+
+    video_tag:'Video Giới Thiệu',video_title:'Khám Phá Trung Tâm <span>Small World</span>',
+    video_sub:'Xem video để hiểu hơn về môi trường học tập và phương pháp giảng dạy độc đáo.',
+    vf1:'Lớp học hiện đại, trang thiết bị đầy đủ',vf2:'Giáo viên bản ngữ tận tâm, năng động',
+    vf3:'Học viên tự tin, vui vẻ trong từng buổi học',video_cta:'Đăng Ký Tham Quan Miễn Phí',
+    gallery_tag:'Hình Ảnh Thực Tế',gallery_title:'Không Gian Học Tập <span>Hiện Đại</span>',
+    gallery_sub:'Môi trường học tập chuyên nghiệp, thân thiện — nơi học viên tự tin phát triển.',
+    gallery_note:'📸 Ảnh sẽ được cập nhật theo hình ảnh thực tế của trung tâm',
+    gallery_cta:'Tham Quan Trực Tiếp →',
     tl1_t:'Thành Lập',tl1_d:'Khai giảng lớp đầu tiên với 12 học viên',
     tl2_t:'Mở Rộng',tl2_d:'Khai trương cơ sở thứ 2, đạt 300 học viên',
     tl3_t:'Chứng Nhận Cambridge',tl3_d:'Được công nhận là Trung tâm luyện thi Cambridge chính thức',
@@ -1537,6 +1725,15 @@ const translations = {
     v6_t:'Transparent & Honest',v6_d:'Clear commitment — if you do not achieve, we refund or provide free repeat.',
     cert_tag:'Certifications & Partners',cert_title:'<span>Internationally</span> Recognized',
     cert1:'Official Examination Center',cert2:'Official IELTS Partner',cert3:'Licensed Educational Institution',cert4:'Rated 4.9★ on Google Maps',
+
+    video_tag:'Introduction Video',video_title:'Discover <span>Small World</span> Center',
+    video_sub:'Watch our video to explore the learning environment, teachers, and our unique teaching methods.',
+    vf1:'Modern classrooms with full equipment',vf2:'Dedicated and energetic native teachers',
+    vf3:'Confident, happy students in every class',video_cta:'Register for a Free Visit',
+    gallery_tag:'Real Photos',gallery_title:'<span>Modern</span> Learning Space',
+    gallery_sub:'Professional, friendly learning environment — where students grow confidently every day.',
+    gallery_note:'📸 Photos will be updated with actual center photos',
+    gallery_cta:'Visit Us In Person →',
     tl1_t:'Founded',tl1_d:'First class opened in District 3 with 12 students',
     tl2_t:'Expansion',tl2_d:'Second campus opened, reached 300 students',
     tl3_t:'Cambridge Certification',tl3_d:'Officially recognized as Cambridge Examination Center',
@@ -1564,6 +1761,19 @@ function applyLang(lang) {
 
 function toggleLang() {
   applyLang(currentLang === 'vi' ? 'en' : 'vi');
+}
+
+
+function playVideo(wrapper) {
+  const youtubeId = 'YOUR_YOUTUBE_ID'; // Thay bằng ID video YouTube thật
+  if (youtubeId === 'YOUR_YOUTUBE_ID') {
+    // Chưa có YouTube — hiện thông báo
+    const badge = wrapper.querySelector('.video-badge');
+    badge.innerHTML = '📧 Liên hệ hello@smallworld.com để cập nhật video!';
+    badge.style.background = '#fff';
+    return;
+  }
+  wrapper.innerHTML = '<iframe width="100%" height="380" src="https://www.youtube.com/embed/'+youtubeId+'?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="display:block;"></iframe>';
 }
 
 // ── ROUTING ──
