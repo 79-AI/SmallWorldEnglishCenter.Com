@@ -1,0 +1,1690 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Small World English Center | Trung Tâm Tiếng Anh Premium</title>
+<meta name="description" content="Small World English Center — Trung tâm tiếng Anh cao cấp với giáo viên bản ngữ, chương trình chuẩn quốc tế cho trẻ em, học sinh và người đi làm."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --purple:#6B2FA0;--purple-dark:#4A1F70;--purple-light:#9B5FD0;--purple-xlight:#F0E6FA;
+  --gold:#D4A017;--gold-light:#F5E6B0;--gold-dark:#A07810;
+  --white:#FFFFFF;--gray-light:#F8F6FC;--gray-mid:#E8E0F0;--gray-text:#5A5A7A;--dark:#1A1028;
+  --font-display:'Playfair Display',serif;--font-head:'Montserrat',sans-serif;--font-body:'Inter',sans-serif;
+  --nav-h:72px;--radius:12px;--shadow:0 4px 24px rgba(107,47,160,.12);--transition:.3s ease;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font-body);color:var(--dark);background:#fff;overflow-x:hidden;}
+a{text-decoration:none;color:inherit;}
+img{max-width:100%;display:block;}
+.page{display:none;animation:fadeIn .4s ease;}
+.page.active{display:block;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:rgba(255,255,255,.96);backdrop-filter:blur(12px);z-index:1000;border-bottom:1px solid var(--gray-mid);transition:box-shadow var(--transition);}
+nav.scrolled{box-shadow:var(--shadow);}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;height:100%;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{display:flex;align-items:center;gap:10px;cursor:pointer;}
+.nav-logo-icon{width:42px;height:42px;background:var(--purple);border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-family:var(--font-display);font-size:18px;font-weight:700;}
+.nav-logo-text{font-family:var(--font-display);font-size:1.15rem;font-weight:700;color:var(--purple-dark);}
+.nav-logo-text span{color:var(--gold);}
+.nav-links{display:flex;align-items:center;gap:4px;}
+.nav-links a{padding:8px 14px;border-radius:8px;font-family:var(--font-head);font-size:.85rem;font-weight:500;color:var(--gray-text);transition:all var(--transition);cursor:pointer;}
+.nav-links a:hover,.nav-links a.active{background:var(--purple-xlight);color:var(--purple);}
+.nav-dropdown{position:relative;}
+.nav-dropdown-menu{display:none;position:absolute;top:calc(100% + 8px);left:0;background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid var(--gray-mid);min-width:220px;overflow:hidden;z-index:100;}
+.nav-dropdown:hover .nav-dropdown-menu{display:block;}
+.nav-dropdown-menu a{display:block;padding:12px 18px;font-size:.85rem;color:var(--gray-text);transition:background var(--transition);}
+.nav-dropdown-menu a:hover{background:var(--purple-xlight);color:var(--purple);}
+.nav-right{display:flex;align-items:center;gap:10px;}
+.btn-lang{background:var(--gray-light);border:1px solid var(--gray-mid);border-radius:20px;padding:6px 14px;font-family:var(--font-head);font-size:.8rem;font-weight:600;cursor:pointer;transition:all var(--transition);}
+.btn-lang:hover{background:var(--purple-xlight);color:var(--purple);border-color:var(--purple);}
+.btn-trial-nav{background:var(--gold);color:#fff;border:none;border-radius:20px;padding:8px 20px;font-family:var(--font-head);font-size:.85rem;font-weight:600;cursor:pointer;transition:all var(--transition);}
+.btn-trial-nav:hover{background:var(--gold-dark);transform:translateY(-1px);}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;}
+.hamburger span{width:24px;height:2px;background:var(--purple);border-radius:2px;transition:all var(--transition);}
+.mobile-menu{display:none;position:fixed;top:var(--nav-h);left:0;right:0;background:#fff;border-bottom:1px solid var(--gray-mid);padding:16px 24px;z-index:999;box-shadow:var(--shadow);}
+.mobile-menu.open{display:block;}
+.mobile-menu a{display:block;padding:12px 0;font-family:var(--font-head);font-size:.95rem;border-bottom:1px solid var(--gray-light);color:var(--dark);cursor:pointer;}
+
+/* ── BUTTONS ── */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:30px;font-family:var(--font-head);font-size:.95rem;font-weight:600;cursor:pointer;transition:all var(--transition);border:none;}
+.btn-primary{background:var(--purple);color:#fff;}
+.btn-primary:hover{background:var(--purple-dark);transform:translateY(-2px);box-shadow:0 8px 24px rgba(107,47,160,.35);}
+.btn-gold{background:var(--gold);color:#fff;}
+.btn-gold:hover{background:var(--gold-dark);transform:translateY(-2px);box-shadow:0 8px 24px rgba(212,160,23,.35);}
+.btn-outline{background:transparent;color:var(--purple);border:2px solid var(--purple);}
+.btn-outline:hover{background:var(--purple);color:#fff;}
+.btn-white{background:#fff;color:var(--purple);}
+.btn-white:hover{background:var(--gold-light);transform:translateY(-2px);}
+
+/* ── SECTION COMMONS ── */
+section{padding:80px 0;}
+.container{max-width:1200px;margin:0 auto;padding:0 24px;}
+.section-tag{display:inline-block;background:var(--purple-xlight);color:var(--purple);font-family:var(--font-head);font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:6px 16px;border-radius:20px;margin-bottom:12px;}
+.section-title{font-family:var(--font-display);font-size:2.2rem;font-weight:700;color:var(--purple-dark);margin-bottom:12px;line-height:1.3;}
+.section-title span{color:var(--gold);}
+.section-sub{font-size:1rem;color:var(--gray-text);max-width:600px;line-height:1.7;}
+.section-head{text-align:center;margin-bottom:56px;}
+.section-head .section-sub{margin:0 auto;}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+
+/* ── HERO ── */
+.hero{min-height:100vh;padding-top:var(--nav-h);background:linear-gradient(135deg,var(--purple-dark) 0%,var(--purple) 50%,#8B3FC0 100%);position:relative;display:flex;align-items:center;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");}
+.hero-content{position:relative;z-index:1;color:#fff;max-width:680px;}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);border-radius:20px;padding:6px 16px;font-size:.82rem;font-family:var(--font-head);font-weight:600;letter-spacing:.05em;margin-bottom:24px;}
+.hero h1{font-family:var(--font-display);font-size:clamp(2.2rem,5vw,3.6rem);font-weight:700;line-height:1.2;margin-bottom:20px;}
+.hero h1 span{color:var(--gold);}
+.hero p{font-size:1.1rem;opacity:.9;line-height:1.7;margin-bottom:32px;max-width:540px;}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap;}
+.hero-stats{display:flex;gap:40px;margin-top:48px;padding-top:32px;border-top:1px solid rgba(255,255,255,.2);}
+.hero-stat{text-align:center;}
+.hero-stat-num{font-family:var(--font-display);font-size:2rem;font-weight:700;color:var(--gold);}
+.hero-stat-label{font-size:.8rem;opacity:.8;font-family:var(--font-head);}
+.hero-visual{position:absolute;right:-80px;top:50%;transform:translateY(-50%);width:500px;opacity:.12;}
+
+/* ── TRUST BADGES ── */
+.trust-bar{background:var(--gray-light);padding:28px 0;border-bottom:1px solid var(--gray-mid);}
+.trust-inner{display:flex;align-items:center;justify-content:center;gap:48px;flex-wrap:wrap;}
+.trust-item{display:flex;align-items:center;gap:10px;font-family:var(--font-head);font-size:.85rem;font-weight:600;color:var(--gray-text);}
+.trust-icon{width:36px;height:36px;background:var(--purple-xlight);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;}
+
+/* ── CARDS ── */
+.card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;transition:transform var(--transition),box-shadow var(--transition);}
+.card:hover{transform:translateY(-6px);box-shadow:0 16px 48px rgba(107,47,160,.18);}
+.card-img{height:200px;background:linear-gradient(135deg,var(--purple) 0%,var(--purple-light) 100%);display:flex;align-items:center;justify-content:center;font-size:64px;}
+.card-body{padding:24px;}
+.card-tag{font-size:.75rem;font-family:var(--font-head);font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--gold);margin-bottom:8px;}
+.card-title{font-family:var(--font-display);font-size:1.2rem;font-weight:600;color:var(--purple-dark);margin-bottom:8px;}
+.card-text{font-size:.9rem;color:var(--gray-text);line-height:1.6;}
+
+/* ── COURSE CARDS ── */
+.course-card{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);transition:all var(--transition);cursor:pointer;}
+.course-card:hover{transform:translateY(-8px);box-shadow:0 20px 56px rgba(107,47,160,.22);}
+.course-card-header{padding:32px 28px 24px;color:#fff;position:relative;overflow:hidden;}
+.course-card-header::after{content:'';position:absolute;right:-20px;bottom:-20px;width:100px;height:100px;border-radius:50%;background:rgba(255,255,255,.1);}
+.course-icon{font-size:48px;margin-bottom:12px;}
+.course-name{font-family:var(--font-display);font-size:1.35rem;font-weight:700;margin-bottom:6px;}
+.course-age{font-size:.82rem;opacity:.85;font-family:var(--font-head);}
+.course-card-body{background:#fff;padding:24px 28px;}
+.course-features{list-style:none;margin-bottom:20px;}
+.course-features li{font-size:.88rem;color:var(--gray-text);padding:6px 0;border-bottom:1px solid var(--gray-light);display:flex;align-items:center;gap:8px;}
+.course-features li::before{content:'✓';color:var(--gold);font-weight:700;font-size:.9rem;}
+.course-price{font-family:var(--font-display);font-size:1.5rem;font-weight:700;color:var(--purple);}
+.course-price-sub{font-size:.8rem;color:var(--gray-text);font-family:var(--font-body);}
+
+/* ── TESTIMONIALS ── */
+.testimonials{background:var(--purple-dark);padding:80px 0;}
+.testimonial-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:var(--radius);padding:32px;color:#fff;}
+.testimonial-stars{color:var(--gold);font-size:1.1rem;margin-bottom:12px;letter-spacing:2px;}
+.testimonial-text{font-size:.95rem;line-height:1.7;opacity:.9;margin-bottom:20px;font-style:italic;}
+.testimonial-author{display:flex;align-items:center;gap:12px;}
+.testimonial-avatar{width:44px;height:44px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-weight:700;font-size:.9rem;color:var(--purple-dark);}
+.testimonial-name{font-family:var(--font-head);font-weight:600;font-size:.9rem;}
+.testimonial-role{font-size:.78rem;opacity:.7;}
+.testimonial-slider{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+
+/* ── TEACHERS ── */
+.teacher-card{text-align:center;padding:28px 20px;background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);}
+.teacher-avatar{width:100px;height:100px;border-radius:50%;margin:0 auto 16px;border:4px solid var(--purple-xlight);font-size:40px;background:linear-gradient(135deg,var(--purple) 0%,var(--purple-light) 100%);display:flex;align-items:center;justify-content:center;color:#fff;}
+.teacher-name{font-family:var(--font-display);font-size:1.15rem;font-weight:600;color:var(--purple-dark);margin-bottom:4px;}
+.teacher-title{font-size:.82rem;color:var(--gold);font-family:var(--font-head);font-weight:600;margin-bottom:8px;}
+.teacher-bio{font-size:.85rem;color:var(--gray-text);line-height:1.6;}
+.teacher-tags{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin-top:12px;}
+.teacher-tag{background:var(--purple-xlight);color:var(--purple);font-size:.72rem;padding:3px 10px;border-radius:20px;font-family:var(--font-head);font-weight:600;}
+
+/* ── FAQ ── */
+.faq-item{border-bottom:1px solid var(--gray-mid);overflow:hidden;}
+.faq-q{padding:20px 0;display:flex;align-items:center;justify-content:space-between;cursor:pointer;font-family:var(--font-head);font-weight:600;color:var(--purple-dark);font-size:.95rem;}
+.faq-icon{width:28px;height:28px;border-radius:50%;background:var(--purple-xlight);color:var(--purple);display:flex;align-items:center;justify-content:center;font-size:1rem;transition:transform var(--transition);flex-shrink:0;}
+.faq-item.open .faq-icon{transform:rotate(45deg);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .35s ease;font-size:.9rem;color:var(--gray-text);line-height:1.7;}
+.faq-item.open .faq-a{max-height:200px;padding-bottom:20px;}
+
+/* ── FORM ── */
+.form-group{margin-bottom:20px;}
+.form-label{display:block;font-family:var(--font-head);font-size:.85rem;font-weight:600;color:var(--purple-dark);margin-bottom:8px;}
+.form-input,.form-select,.form-textarea{width:100%;padding:13px 16px;border:1.5px solid var(--gray-mid);border-radius:var(--radius);font-family:var(--font-body);font-size:.9rem;color:var(--dark);transition:border-color var(--transition);}
+.form-input:focus,.form-select:focus,.form-textarea:focus{outline:none;border-color:var(--purple);}
+.form-textarea{resize:vertical;min-height:120px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.form-check{display:flex;align-items:center;gap:10px;font-size:.88rem;color:var(--gray-text);}
+.form-check input{accent-color:var(--purple);}
+
+/* ── STATS COUNTER ── */
+.stats-section{background:linear-gradient(135deg,var(--purple) 0%,var(--purple-dark) 100%);padding:60px 0;color:#fff;}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;text-align:center;}
+.stat-num{font-family:var(--font-display);font-size:2.8rem;font-weight:700;color:var(--gold);}
+.stat-label{font-family:var(--font-head);font-size:.85rem;opacity:.85;margin-top:4px;}
+
+/* ── PRICING ── */
+.pricing-card{border-radius:var(--radius);border:2px solid var(--gray-mid);padding:36px 28px;text-align:center;transition:all var(--transition);background:#fff;}
+.pricing-card.featured{border-color:var(--purple);background:var(--purple-xlight);position:relative;}
+.pricing-card.featured::before{content:'Phổ biến nhất';position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--gold);color:#fff;font-family:var(--font-head);font-size:.75rem;font-weight:700;padding:4px 16px;border-radius:20px;}
+.pricing-card:hover{border-color:var(--purple);transform:translateY(-4px);box-shadow:var(--shadow);}
+.pricing-name{font-family:var(--font-head);font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--gold);margin-bottom:8px;}
+.pricing-price{font-family:var(--font-display);font-size:2.4rem;font-weight:700;color:var(--purple-dark);}
+.pricing-period{font-size:.82rem;color:var(--gray-text);}
+.pricing-features{list-style:none;text-align:left;margin:24px 0;}
+.pricing-features li{padding:8px 0;font-size:.88rem;color:var(--gray-text);display:flex;gap:8px;align-items:flex-start;}
+.pricing-features li::before{content:'✓';color:var(--gold);font-weight:700;flex-shrink:0;margin-top:1px;}
+
+/* ── BLOG ── */
+.blog-card{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);}
+.blog-img{height:180px;background:linear-gradient(135deg,var(--purple) 0%,var(--purple-light) 100%);display:flex;align-items:center;justify-content:center;font-size:56px;}
+.blog-body{padding:20px;}
+.blog-meta{font-size:.78rem;color:var(--gray-text);margin-bottom:8px;}
+.blog-title{font-family:var(--font-display);font-size:1.05rem;font-weight:600;color:var(--purple-dark);margin-bottom:8px;line-height:1.4;}
+.blog-excerpt{font-size:.85rem;color:var(--gray-text);line-height:1.6;}
+.blog-readmore{display:inline-block;margin-top:12px;font-family:var(--font-head);font-size:.82rem;font-weight:600;color:var(--purple);}
+
+/* ── CONTACT ── */
+.contact-info-item{display:flex;gap:16px;align-items:flex-start;margin-bottom:24px;}
+.contact-info-icon{width:44px;height:44px;border-radius:50%;background:var(--purple-xlight);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+.contact-info-label{font-family:var(--font-head);font-size:.82rem;font-weight:600;color:var(--gray-text);margin-bottom:2px;}
+.contact-info-value{font-size:.95rem;color:var(--purple-dark);font-weight:500;}
+
+/* ── MAP PLACEHOLDER ── */
+.map-box{border-radius:var(--radius);overflow:hidden;height:300px;background:linear-gradient(135deg,var(--gray-light) 0%,var(--gray-mid) 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;border:2px dashed var(--gray-mid);}
+.map-box span{font-size:48px;}
+.map-box p{font-family:var(--font-head);font-size:.85rem;color:var(--gray-text);font-weight:500;}
+
+/* ── ABOUT ── */
+.value-card{padding:28px;border-radius:var(--radius);background:var(--gray-light);border-left:4px solid var(--purple);}
+.value-icon{font-size:36px;margin-bottom:12px;}
+.value-title{font-family:var(--font-head);font-weight:700;color:var(--purple-dark);margin-bottom:8px;}
+.value-text{font-size:.88rem;color:var(--gray-text);line-height:1.6;}
+.timeline{position:relative;padding-left:32px;}
+.timeline::before{content:'';position:absolute;left:12px;top:0;bottom:0;width:2px;background:var(--purple-xlight);}
+.timeline-item{position:relative;margin-bottom:32px;}
+.timeline-dot{position:absolute;left:-26px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--purple);border:3px solid #fff;box-shadow:0 0 0 2px var(--purple-xlight);}
+.timeline-year{font-family:var(--font-head);font-size:.78rem;font-weight:700;color:var(--gold);margin-bottom:4px;}
+.timeline-title{font-family:var(--font-head);font-weight:600;color:var(--purple-dark);margin-bottom:4px;}
+.timeline-text{font-size:.85rem;color:var(--gray-text);}
+
+/* ── MODAL ── */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:2000;align-items:center;justify-content:center;}
+.modal-overlay.open{display:flex;}
+.modal-box{background:#fff;border-radius:20px;padding:40px;max-width:520px;width:90%;max-height:90vh;overflow-y:auto;position:relative;}
+.modal-close{position:absolute;top:16px;right:20px;background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--gray-text);}
+.modal-title{font-family:var(--font-display);font-size:1.5rem;font-weight:700;color:var(--purple-dark);margin-bottom:6px;}
+.modal-sub{font-size:.88rem;color:var(--gray-text);margin-bottom:24px;}
+.success-msg{display:none;text-align:center;padding:24px;}
+.success-msg span{font-size:56px;display:block;margin-bottom:12px;}
+.success-msg h3{font-family:var(--font-display);font-size:1.3rem;color:var(--purple-dark);margin-bottom:8px;}
+.success-msg p{font-size:.88rem;color:var(--gray-text);}
+
+/* ── FLOATING BUTTONS ── */
+.float-zalo{position:fixed;bottom:100px;right:24px;z-index:900;display:flex;flex-direction:column;align-items:center;gap:6px;}
+.float-zalo a{width:52px;height:52px;border-radius:50%;background:#0068FF;display:flex;align-items:center;justify-content:center;color:#fff;font-size:20px;box-shadow:0 4px 16px rgba(0,104,255,.4);animation:pulse 2s infinite;}
+.float-phone{position:fixed;bottom:40px;right:24px;z-index:900;}
+.float-phone a{width:52px;height:52px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;color:#fff;font-size:20px;box-shadow:0 4px 16px rgba(212,160,23,.4);}
+.back-top{position:fixed;bottom:160px;right:24px;z-index:900;display:none;}
+.back-top.show{display:block;}
+.back-top button{width:44px;height:44px;border-radius:50%;background:var(--purple);color:#fff;border:none;font-size:18px;cursor:pointer;box-shadow:var(--shadow);}
+@keyframes pulse{0%,100%{box-shadow:0 4px 16px rgba(0,104,255,.4)}50%{box-shadow:0 4px 24px rgba(0,104,255,.7)}}
+
+/* ── FOOTER ── */
+footer{background:var(--dark);color:#fff;padding:60px 0 24px;}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px;}
+.footer-brand{font-family:var(--font-display);font-size:1.15rem;font-weight:700;color:var(--gold);margin-bottom:12px;}
+.footer-desc{font-size:.85rem;opacity:.7;line-height:1.7;}
+.footer-heading{font-family:var(--font-head);font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--gold);margin-bottom:16px;}
+.footer-links{list-style:none;}
+.footer-links li{margin-bottom:8px;}
+.footer-links a{font-size:.85rem;opacity:.7;transition:opacity var(--transition);cursor:pointer;}
+.footer-links a:hover{opacity:1;color:var(--gold);}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+.footer-bottom p{font-size:.8rem;opacity:.6;}
+.social-links{display:flex;gap:10px;}
+.social-link{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:14px;transition:background var(--transition);}
+.social-link:hover{background:var(--purple);}
+
+/* ── COOKIE BANNER ── */
+.cookie-banner{position:fixed;bottom:0;left:0;right:0;background:var(--purple-dark);color:#fff;padding:16px 24px;z-index:1500;display:none;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+.cookie-banner.show{display:flex;}
+.cookie-banner p{font-size:.85rem;opacity:.9;}
+.cookie-btns{display:flex;gap:10px;}
+.cookie-accept{background:var(--gold);border:none;color:#fff;padding:8px 20px;border-radius:20px;font-family:var(--font-head);font-size:.82rem;font-weight:600;cursor:pointer;}
+.cookie-decline{background:transparent;border:1px solid rgba(255,255,255,.3);color:#fff;padding:8px 16px;border-radius:20px;font-family:var(--font-head);font-size:.82rem;cursor:pointer;}
+
+/* ── PAGE HERO ── */
+.page-hero{padding:calc(var(--nav-h) + 48px) 0 48px;background:linear-gradient(135deg,var(--purple-dark) 0%,var(--purple) 100%);color:#fff;text-align:center;}
+.page-hero h1{font-family:var(--font-display);font-size:2.4rem;font-weight:700;margin-bottom:12px;}
+.page-hero p{font-size:1rem;opacity:.85;max-width:560px;margin:0 auto;}
+.breadcrumb{font-size:.82rem;opacity:.7;margin-bottom:16px;font-family:var(--font-head);}
+.breadcrumb span{margin:0 6px;}
+
+/* ── SCROLL ANIMATE ── */
+.fade-up{opacity:0;transform:translateY(32px);transition:opacity .6s ease,transform .6s ease;}
+.fade-up.visible{opacity:1;transform:none;}
+.fade-up:nth-child(2){transition-delay:.1s;}
+.fade-up:nth-child(3){transition-delay:.2s;}
+.fade-up:nth-child(4){transition-delay:.3s;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){
+  .grid-4{grid-template-columns:repeat(2,1fr);}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:32px;}
+  .testimonial-slider{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:768px){
+  .nav-links{display:none;}
+  .hamburger{display:flex;}
+  .grid-2,.grid-3,.grid-4,.stats-grid,.form-row{grid-template-columns:1fr;}
+  .hero-stats{gap:24px;flex-wrap:wrap;}
+  .section-title{font-size:1.7rem;}
+  .testimonial-slider{grid-template-columns:1fr;}
+  .footer-grid{grid-template-columns:1fr;}
+  .hero-visual{display:none;}
+  .trust-inner{gap:24px;}
+  section{padding:56px 0;}
+}
+
+/* ── LANGUAGE TOGGLE — visible always including mobile ── */
+.btn-lang {
+  background: var(--purple-xlight);
+  border: 2px solid var(--purple);
+  border-radius: 20px;
+  padding: 7px 16px;
+  font-family: var(--font-head);
+  font-size: .82rem;
+  font-weight: 700;
+  cursor: pointer;
+  color: var(--purple);
+  transition: all var(--transition);
+  white-space: nowrap;
+}
+.btn-lang:hover { background: var(--purple); color: #fff; }
+
+/* ── MOBILE IMPROVEMENTS ── */
+@media(max-width:768px){
+  .nav-right { gap: 8px; }
+  .btn-lang { display: inline-flex !important; padding: 6px 12px; font-size: .78rem; }
+  .btn-trial-nav { display: none; } /* hidden on mobile — in mobile menu instead */
+  .hero { padding-top: calc(var(--nav-h) + 16px); padding-bottom: 40px; min-height: auto; }
+  .hero h1 { font-size: 1.9rem; }
+  .hero p { font-size: .95rem; }
+  .hero-btns { gap: 12px; }
+  .hero-btns .btn { padding: 12px 22px; font-size: .88rem; }
+  .hero-stats { gap: 16px; justify-content: space-around; }
+  .hero-stat-num { font-size: 1.6rem; }
+  .hero-stat-label { font-size: .72rem; }
+  .section-title { font-size: 1.55rem; }
+  .trust-inner { gap: 16px; justify-content: flex-start; }
+  .trust-item { font-size: .78rem; }
+  .course-card { max-width: 420px; margin: 0 auto; }
+  .stats-grid { grid-template-columns: repeat(2,1fr); gap: 24px; }
+  .stat-num { font-size: 2.2rem; }
+  .footer-grid { gap: 28px; }
+  .modal-box { padding: 24px 20px; margin: 16px; }
+  .form-row { grid-template-columns: 1fr; }
+  .grid-2 { gap: 32px; }
+  .page-hero h1 { font-size: 1.8rem; }
+  .float-zalo, .float-phone { right: 16px; }
+  .back-top { right: 16px; bottom: 130px; }
+  .cookie-banner { flex-direction: column; gap: 12px; padding: 16px; }
+}
+@media(max-width:480px){
+  .container { padding: 0 16px; }
+  .hero h1 { font-size: 1.65rem; }
+  .hero-stats { grid-template-columns: repeat(2,1fr); display: grid; gap: 12px; }
+  .section-title { font-size: 1.4rem; }
+  .btn { padding: 12px 20px; font-size: .88rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav id="mainNav">
+  <div class="nav-inner">
+    <div class="nav-logo" onclick="goPage('home')">
+      <div class="nav-logo-icon">SW</div>
+      <div class="nav-logo-text">Small <span>World</span></div>
+    </div>
+    <div class="nav-links">
+      <a onclick="goPage('home')" data-i18n="nav_home">Trang Chủ</a>
+      <a onclick="goPage('about')" data-i18n="nav_about">Về Chúng Tôi</a>
+      <div class="nav-dropdown">
+        <a data-i18n="nav_courses">Khóa Học ▾</a>
+        <div class="nav-dropdown-menu">
+          <a onclick="goPage('course-kids')">🧒 Tiếng Anh Trẻ Em</a>
+          <a onclick="goPage('course-comm')">💬 Tiếng Anh Giao Tiếp</a>
+          <a onclick="goPage('course-ielts')">📝 Luyện Thi IELTS/TOEFL</a>
+          <a onclick="goPage('course-biz')">💼 Business English</a>
+        </div>
+      </div>
+      <a onclick="goPage('teachers')" data-i18n="nav_teachers">Giáo Viên</a>
+      <a onclick="goPage('blog')" data-i18n="nav_blog">Blog</a>
+      <a onclick="goPage('contact')" data-i18n="nav_contact">Liên Hệ</a>
+      <a onclick="goPage('faq')" data-i18n="nav_faq">FAQ</a>
+    </div>
+    <div class="nav-right">
+      <button class="btn-lang" id="langBtn" onclick="toggleLang()">🌐 EN</button>
+      <button class="btn-trial-nav" onclick="openModal()" data-i18n="nav_trial">Học Thử Miễn Phí</button>
+    </div>
+    <div class="hamburger" onclick="toggleMobile()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a onclick="goPage('home');toggleMobile()" data-i18n="nav_home">Trang Chủ</a>
+  <a onclick="goPage('about');toggleMobile()" data-i18n="nav_about">Về Chúng Tôi</a>
+  <a onclick="goPage('course-kids');toggleMobile()">🧒 Tiếng Anh Trẻ Em</a>
+  <a onclick="goPage('course-comm');toggleMobile()">💬 Tiếng Anh Giao Tiếp</a>
+  <a onclick="goPage('course-ielts');toggleMobile()">📝 Luyện Thi IELTS/TOEFL</a>
+  <a onclick="goPage('course-biz');toggleMobile()">💼 Business English</a>
+  <a onclick="goPage('teachers');toggleMobile()" data-i18n="nav_teachers">Giáo Viên</a>
+  <a onclick="goPage('blog');toggleMobile()" data-i18n="nav_blog">Blog</a>
+  <a onclick="goPage('contact');toggleMobile()" data-i18n="nav_contact">Liên Hệ</a>
+  <a onclick="goPage('faq');toggleMobile()">FAQ</a>
+  <a onclick="openModal();toggleMobile()" data-i18n="nav_trial" style="color:var(--purple);font-weight:700;">Học Thử Miễn Phí</a>
+</div>
+
+<!-- ══════════════════════════════════════
+     PAGE: HOME
+══════════════════════════════════════ -->
+<div id="page-home" class="page active">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-tag">✨ <span data-i18n="hero_tag">Trung Tâm Tiếng Anh Premium tại Long Xuyên, An Giang</span></div>
+        <h1 data-i18n="hero_title">Mở Cánh Cửa <span>Thế Giới</span> Bằng Tiếng Anh</h1>
+        <p data-i18n="hero_sub">Chương trình đào tạo chuẩn quốc tế — Giáo viên bản ngữ có chứng chỉ — Phương pháp học thực tế, hiệu quả từ buổi đầu tiên.</p>
+        <div class="hero-btns">
+          <button class="btn btn-gold" onclick="openModal()">🎁 <span data-i18n="hero_cta1">Học Thử Miễn Phí</span></button>
+          <button class="btn btn-white btn-outline" style="border-color:rgba(255,255,255,.5);color:#fff;" onclick="goPage('about')">
+            <span data-i18n="hero_cta2">Tìm Hiểu Thêm</span> →
+          </button>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat"><div class="hero-stat-num" data-count="2500">0</div><div class="hero-stat-label" data-i18n="stat1">Học Viên</div></div>
+          <div class="hero-stat"><div class="hero-stat-num" data-count="15">0</div><div class="hero-stat-label" data-i18n="stat2">Giáo Viên Bản Ngữ</div></div>
+          <div class="hero-stat"><div class="hero-stat-num" data-count="98">0</div><div class="hero-stat-label" data-i18n="stat3">% Hài Lòng</div></div>
+          <div class="hero-stat"><div class="hero-stat-num" data-count="8">0</div><div class="hero-stat-label" data-i18n="stat4">Năm Kinh Nghiệm</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Bar -->
+  <div class="trust-bar">
+    <div class="trust-inner">
+      <div class="trust-item"><div class="trust-icon">🏆</div><span data-i18n="trust1">Chứng Nhận Cambridge</span></div>
+      <div class="trust-item"><div class="trust-icon">🌍</div><span data-i18n="trust2">Giáo Viên Bản Ngữ</span></div>
+      <div class="trust-item"><div class="trust-icon">📊</div><span data-i18n="trust3">Cam Kết Đầu Ra</span></div>
+      <div class="trust-item"><div class="trust-icon">💳</div><span data-i18n="trust4">Hỗ Trợ Trả Góp 0%</span></div>
+      <div class="trust-item"><div class="trust-icon">🔄</div><span data-i18n="trust5">Học Bù Miễn Phí</span></div>
+    </div>
+  </div>
+
+  <!-- Courses Overview -->
+  <section style="background:var(--gray-light);">
+    <div class="container">
+      <div class="section-head fade-up">
+        <div class="section-tag" data-i18n="courses_tag">Chương Trình Đào Tạo</div>
+        <h2 class="section-title" data-i18n="courses_title">4 Chương Trình <span>Chuyên Biệt</span></h2>
+        <p class="section-sub" data-i18n="courses_sub">Thiết kế riêng cho từng đối tượng — từ trẻ em 4 tuổi đến doanh nhân cấp cao</p>
+      </div>
+      <div class="grid-4">
+        <div class="course-card fade-up" onclick="goPage('course-kids')">
+          <div class="course-card-header" style="background:linear-gradient(135deg,#FF6B9D 0%,#FF8E53 100%);">
+            <div class="course-icon">🧒</div>
+            <div class="course-name" data-i18n="c1_name">Tiếng Anh Trẻ Em</div>
+            <div class="course-age" data-i18n="c1_age">4 – 12 tuổi</div>
+          </div>
+          <div class="course-card-body">
+            <ul class="course-features">
+              <li data-i18n="c1_f1">Học qua trò chơi & âm nhạc</li>
+              <li data-i18n="c1_f2">Phát âm chuẩn từ nhỏ</li>
+              <li data-i18n="c1_f3">Lớp nhỏ ≤12 học viên</li>
+            </ul>
+            <div class="course-price">2.800.000đ <div class="course-price-sub" data-i18n="per_month">/tháng</div></div>
+            <button class="btn btn-primary" style="width:100%;margin-top:16px;justify-content:center;" onclick="openModal()" data-i18n="try_free">Đăng Ký Học Thử</button>
+          </div>
+        </div>
+        <div class="course-card fade-up" onclick="goPage('course-comm')">
+          <div class="course-card-header" style="background:linear-gradient(135deg,#6B2FA0 0%,#9B5FD0 100%);">
+            <div class="course-icon">💬</div>
+            <div class="course-name" data-i18n="c2_name">Tiếng Anh Giao Tiếp</div>
+            <div class="course-age" data-i18n="c2_age">13 tuổi trở lên</div>
+          </div>
+          <div class="course-card-body">
+            <ul class="course-features">
+              <li data-i18n="c2_f1">4 kỹ năng Nghe-Nói-Đọc-Viết</li>
+              <li data-i18n="c2_f2">Tình huống thực tế</li>
+              <li data-i18n="c2_f3">Luyện phản xạ tự nhiên</li>
+            </ul>
+            <div class="course-price">3.200.000đ <div class="course-price-sub" data-i18n="per_month">/tháng</div></div>
+            <button class="btn btn-primary" style="width:100%;margin-top:16px;justify-content:center;" onclick="openModal()" data-i18n="try_free">Đăng Ký Học Thử</button>
+          </div>
+        </div>
+        <div class="course-card fade-up" onclick="goPage('course-ielts')">
+          <div class="course-card-header" style="background:linear-gradient(135deg,#1A1028 0%,#4A1F70 100%);">
+            <div class="course-icon">📝</div>
+            <div class="course-name" data-i18n="c3_name">IELTS / TOEFL</div>
+            <div class="course-age" data-i18n="c3_age">Luyện thi cấp tốc</div>
+          </div>
+          <div class="course-card-body">
+            <ul class="course-features">
+              <li data-i18n="c3_f1">Cam kết tăng 1.0 band score</li>
+              <li data-i18n="c3_f2">Luyện đề thật hàng tuần</li>
+              <li data-i18n="c3_f3">Giáo viên IELTS 8.0+</li>
+            </ul>
+            <div class="course-price">4.500.000đ <div class="course-price-sub" data-i18n="per_month">/tháng</div></div>
+            <button class="btn btn-primary" style="width:100%;margin-top:16px;justify-content:center;" onclick="openModal()" data-i18n="try_free">Đăng Ký Học Thử</button>
+          </div>
+        </div>
+        <div class="course-card fade-up" onclick="goPage('course-biz')">
+          <div class="course-card-header" style="background:linear-gradient(135deg,#D4A017 0%,#A07810 100%);">
+            <div class="course-icon">💼</div>
+            <div class="course-name" data-i18n="c4_name">Business English</div>
+            <div class="course-age" data-i18n="c4_age">Người đi làm & Doanh nhân</div>
+          </div>
+          <div class="course-card-body">
+            <ul class="course-features">
+              <li data-i18n="c4_f1">Thuyết trình & đàm phán</li>
+              <li data-i18n="c4_f2">Email & báo cáo chuyên nghiệp</li>
+              <li data-i18n="c4_f3">Lịch linh hoạt sáng/tối</li>
+            </ul>
+            <div class="course-price">5.000.000đ <div class="course-price-sub" data-i18n="per_month">/tháng</div></div>
+            <button class="btn btn-primary" style="width:100%;margin-top:16px;justify-content:center;" onclick="openModal()" data-i18n="try_free">Đăng Ký Học Thử</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Us -->
+  <section>
+    <div class="container">
+      <div class="grid-2">
+        <div>
+          <div class="section-tag fade-up" data-i18n="why_tag">Tại Sao Chọn Chúng Tôi?</div>
+          <h2 class="section-title fade-up" data-i18n="why_title">Hơn 8 Năm Kiến Tạo <span>Thành Công</span> Cho Học Viên</h2>
+          <p class="section-sub fade-up" data-i18n="why_sub">Small World không chỉ dạy tiếng Anh — chúng tôi xây dựng sự tự tin và năng lực giao tiếp toàn cầu cho từng học viên.</p>
+          <div style="margin-top:32px;display:flex;flex-direction:column;gap:20px;">
+            <div class="fade-up" style="display:flex;gap:16px;align-items:flex-start;">
+              <div style="width:48px;height:48px;border-radius:12px;background:var(--purple-xlight);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;">🎯</div>
+              <div><strong style="font-family:var(--font-head);color:var(--purple-dark);" data-i18n="why1_t">Cam Kết Đầu Ra</strong><br><span style="font-size:.88rem;color:var(--gray-text);" data-i18n="why1_d">Không đạt mục tiêu — hoàn tiền 100% hoặc học lại miễn phí</span></div>
+            </div>
+            <div class="fade-up" style="display:flex;gap:16px;align-items:flex-start;">
+              <div style="width:48px;height:48px;border-radius:12px;background:var(--purple-xlight);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;">👨‍🏫</div>
+              <div><strong style="font-family:var(--font-head);color:var(--purple-dark);" data-i18n="why2_t">Giáo Viên Chất Lượng Cao</strong><br><span style="font-size:.88rem;color:var(--gray-text);" data-i18n="why2_d">100% giáo viên có chứng chỉ CELTA/DELTA, kinh nghiệm tối thiểu 5 năm</span></div>
+            </div>
+            <div class="fade-up" style="display:flex;gap:16px;align-items:flex-start;">
+              <div style="width:48px;height:48px;border-radius:12px;background:var(--purple-xlight);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;">📱</div>
+              <div><strong style="font-family:var(--font-head);color:var(--purple-dark);" data-i18n="why3_t">App Học Online Riêng</strong><br><span style="font-size:.88rem;color:var(--gray-text);" data-i18n="why3_d">Luyện tập mọi lúc, mọi nơi với ứng dụng SmallWorld App độc quyền</span></div>
+            </div>
+            <div class="fade-up" style="display:flex;gap:16px;align-items:flex-start;">
+              <div style="width:48px;height:48px;border-radius:12px;background:var(--purple-xlight);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;">🏅</div>
+              <div><strong style="font-family:var(--font-head);color:var(--purple-dark);" data-i18n="why4_t">Chứng Chỉ Được Công Nhận</strong><br><span style="font-size:.88rem;color:var(--gray-text);" data-i18n="why4_d">Chứng chỉ Small World được nhà tuyển dụng và trường quốc tế công nhận</span></div>
+            </div>
+          </div>
+          <button class="btn btn-primary fade-up" style="margin-top:32px;" onclick="goPage('about')" data-i18n="learn_more">Khám Phá Thêm →</button>
+        </div>
+        <div class="fade-up" style="background:linear-gradient(135deg,var(--purple) 0%,var(--purple-dark) 100%);border-radius:20px;padding:40px;color:#fff;display:flex;flex-direction:column;gap:20px;">
+          <h3 style="font-family:var(--font-display);font-size:1.5rem;" data-i18n="result_title">Kết Quả Thực Tế Từ Học Viên</h3>
+          <div style="background:rgba(255,255,255,.1);border-radius:12px;padding:20px;">
+            <div style="font-size:2rem;color:var(--gold);font-family:var(--font-display);font-weight:700;">94%</div>
+            <div style="font-size:.88rem;opacity:.85;margin-top:4px;" data-i18n="r1">Học viên IELTS đạt band mục tiêu sau 4 tháng</div>
+          </div>
+          <div style="background:rgba(255,255,255,.1);border-radius:12px;padding:20px;">
+            <div style="font-size:2rem;color:var(--gold);font-family:var(--font-display);font-weight:700;">+40%</div>
+            <div style="font-size:.88rem;opacity:.85;margin-top:4px;" data-i18n="r2">Tăng lương sau khi hoàn thành Business English</div>
+          </div>
+          <div style="background:rgba(255,255,255,.1);border-radius:12px;padding:20px;">
+            <div style="font-size:2rem;color:var(--gold);font-family:var(--font-display);font-weight:700;">3x</div>
+            <div style="font-size:.88rem;opacity:.85;margin-top:4px;" data-i18n="r3">Tốc độ tiến bộ so với tự học tại nhà</div>
+          </div>
+          <button class="btn btn-gold" onclick="openModal()" style="justify-content:center;">
+            <span data-i18n="book_trial">Đặt Lịch Tư Vấn Miễn Phí</span> 🎁
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div><div class="stat-num" data-count="2500">0</div><div class="stat-label" data-i18n="stats1">Học Viên Đã Tốt Nghiệp</div></div>
+        <div><div class="stat-num" data-count="15">0</div><div class="stat-label" data-i18n="stats2">Giáo Viên Bản Ngữ</div></div>
+        <div><div class="stat-num" data-count="4">0</div><div class="stat-label" data-i18n="stats3">Cơ Sở Long Xuyên, An Giang</div></div>
+        <div><div class="stat-num" data-count="8">0</div><div class="stat-label" data-i18n="stats4">Năm Kinh Nghiệm</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <div class="container">
+      <div class="section-head fade-up">
+        <div class="section-tag" style="background:rgba(255,255,255,.15);color:#fff;" data-i18n="testi_tag">Học Viên Nói Gì?</div>
+        <h2 class="section-title" style="color:#fff;" data-i18n="testi_title">Hàng Nghìn <span>Câu Chuyện Thành Công</span></h2>
+      </div>
+      <div class="testimonial-slider">
+        <div class="testimonial-card fade-up">
+          <div class="testimonial-stars">★★★★★</div>
+          <div class="testimonial-text" data-i18n="t1">"Con tôi từ sợ nói tiếng Anh đến tự tin thuyết trình trước lớp chỉ sau 6 tháng học tại Small World. Phương pháp giảng dạy của trung tâm thực sự rất hiệu quả với trẻ em."</div>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">NL</div>
+            <div><div class="testimonial-name">Chị Nguyễn Lan</div><div class="testimonial-role" data-i18n="t1_role">Phụ huynh học viên lớp Kids 6-8</div></div>
+          </div>
+        </div>
+        <div class="testimonial-card fade-up">
+          <div class="testimonial-stars">★★★★★</div>
+          <div class="testimonial-text" data-i18n="t2">"Tôi đã học 3 trung tâm khác nhau trước khi đến Small World. Đây là nơi duy nhất tôi thực sự cảm thấy tiến bộ sau mỗi buổi học. IELTS của tôi từ 5.5 lên 7.0 sau 5 tháng."</div>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">TM</div>
+            <div><div class="testimonial-name">Anh Trần Minh</div><div class="testimonial-role" data-i18n="t2_role">Học viên IELTS — Đạt 7.0 Band</div></div>
+          </div>
+        </div>
+        <div class="testimonial-card fade-up">
+          <div class="testimonial-stars">★★★★★</div>
+          <div class="testimonial-text" data-i18n="t3">"Business English tại Small World giúp tôi tự tin đàm phán với đối tác nước ngoài. Được thăng chức và tăng lương 50% sau 8 tháng học. Đầu tư xứng đáng nhất tôi từng làm!"</div>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">PH</div>
+            <div><div class="testimonial-name">Chị Phương Hoa</div><div class="testimonial-role" data-i18n="t3_role">Business English — Marketing Manager</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Preview -->
+  <section style="background:var(--gray-light);">
+    <div class="container">
+      <div class="section-head fade-up">
+        <div class="section-tag" data-i18n="blog_tag">Blog & Kiến Thức</div>
+        <h2 class="section-title" data-i18n="blog_title">Góc Học Tiếng Anh <span>Hiệu Quả</span></h2>
+      </div>
+      <div class="grid-3">
+        <div class="blog-card fade-up">
+          <div class="blog-img">📚</div>
+          <div class="blog-body">
+            <div class="blog-meta">12 tháng 5, 2026 · IELTS Tips</div>
+            <div class="blog-title" data-i18n="b1">7 Bí Quyết Viết IELTS Writing Task 2 Đạt Band 7.0+</div>
+            <div class="blog-excerpt" data-i18n="b1_ex">Những chiến lược được đúc kết từ hàng trăm học viên đã đạt band mục tiêu tại Small World English Center...</div>
+            <a class="blog-readmore" onclick="goPage('blog')" data-i18n="read_more">Đọc thêm →</a>
+          </div>
+        </div>
+        <div class="blog-card fade-up">
+          <div class="blog-img">🎮</div>
+          <div class="blog-body">
+            <div class="blog-meta">5 tháng 5, 2026 · Trẻ Em</div>
+            <div class="blog-title" data-i18n="b2">Dạy Tiếng Anh Cho Trẻ Qua Game: Phương Pháp TPR Hiệu Quả</div>
+            <div class="blog-excerpt" data-i18n="b2_ex">Total Physical Response (TPR) là phương pháp giúp trẻ học ngôn ngữ tự nhiên, vui vẻ và hiệu quả nhất...</div>
+            <a class="blog-readmore" onclick="goPage('blog')" data-i18n="read_more">Đọc thêm →</a>
+          </div>
+        </div>
+        <div class="blog-card fade-up">
+          <div class="blog-img">💼</div>
+          <div class="blog-body">
+            <div class="blog-meta">28 tháng 4, 2026 · Business English</div>
+            <div class="blog-title" data-i18n="b3">10 Cụm Từ Tiếng Anh Chuyên Nghiệp Dùng Trong Meeting</div>
+            <div class="blog-excerpt" data-i18n="b3_ex">Những câu nói "xịn" giúp bạn tự tin hơn trong các cuộc họp với đối tác và sếp nước ngoài...</div>
+            <a class="blog-readmore" onclick="goPage('blog')" data-i18n="read_more">Đọc thêm →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section style="background:linear-gradient(135deg,var(--gold) 0%,var(--gold-dark) 100%);padding:60px 0;">
+    <div class="container" style="text-align:center;color:#fff;">
+      <h2 class="section-title fade-up" style="color:#fff;" data-i18n="cta_title">Sẵn Sàng Bắt Đầu Hành Trình Của Bạn?</h2>
+      <p class="fade-up" style="max-width:520px;margin:12px auto 32px;opacity:.9;" data-i18n="cta_sub">Đăng ký ngay hôm nay — học thử 1 buổi miễn phí, không ràng buộc.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;" class="fade-up">
+        <button class="btn btn-white" onclick="openModal()" data-i18n="cta_btn1">🎁 Học Thử Miễn Phí</button>
+        <button class="btn btn-outline" style="border-color:#fff;color:#fff;" onclick="goPage('contact')" data-i18n="cta_btn2">📞 Gọi Tư Vấn Ngay</button>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ══════════════════════════════════════
+     PAGE: ABOUT
+══════════════════════════════════════ -->
+<div id="page-about" class="page">
+  <div class="page-hero">
+    <div class="container">
+      <div class="breadcrumb">Trang Chủ <span>›</span> <span data-i18n="nav_about">Về Chúng Tôi</span></div>
+      <h1 data-i18n="about_h1">Câu Chuyện Small World</h1>
+      <p data-i18n="about_h1_sub">8 năm kiến tạo thành công — hơn 2,500 học viên đã thay đổi cuộc đời bằng tiếng Anh</p>
+    </div>
+  </div>
+  <section>
+    <div class="container">
+      <div class="grid-2">
+        <div>
+          <div class="section-tag fade-up" data-i18n="our_story">Câu Chuyện Của Chúng Tôi</div>
+          <h2 class="section-title fade-up" data-i18n="about_title">Từ Ước Mơ <span>Nhỏ Bé</span> Đến Trung Tâm <span>Hàng Đầu</span></h2>
+          <p class="fade-up" style="color:var(--gray-text);line-height:1.8;margin-bottom:16px;" data-i18n="about_p1">Small World được thành lập năm 2016 với niềm tin sâu sắc: mỗi người Việt Nam đều có thể giao tiếp tiếng Anh tự tin — nếu được học đúng phương pháp, đúng môi trường.</p>
+          <p class="fade-up" style="color:var(--gray-text);line-height:1.8;margin-bottom:24px;" data-i18n="about_p2">Từ lớp học đầu tiên với 12 học viên tại Long Xuyên, chúng tôi đã phát triển thành 4 cơ sở trên khắp Long Xuyên, An Giang, đào tạo hơn 2,500 học viên và xây dựng đội ngũ 15 giáo viên bản ngữ chất lượng cao.</p>
+          <div class="fade-up">
+            <div class="timeline">
+              <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-year">2016</div><div class="timeline-title" data-i18n="tl1_t">Thành Lập</div><div class="timeline-text" data-i18n="tl1_d">Khai giảng lớp đầu tiên tại Long Xuyên với 12 học viên</div></div>
+              <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-year">2018</div><div class="timeline-title" data-i18n="tl2_t">Mở Rộng</div><div class="timeline-text" data-i18n="tl2_d">Khai trương cơ sở thứ 2, đạt 300 học viên</div></div>
+              <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-year">2021</div><div class="timeline-title" data-i18n="tl3_t">Chứng Nhận Cambridge</div><div class="timeline-text" data-i18n="tl3_d">Được công nhận là Trung tâm luyện thi Cambridge chính thức</div></div>
+              <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-year">2024</div><div class="timeline-title" data-i18n="tl4_t">Top 10 Trung Tâm Anh Ngữ</div><div class="timeline-text" data-i18n="tl4_d">Được vinh danh Top 10 Trung tâm tiếng Anh uy tín Long Xuyên, An Giang</div></div>
+              <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-year">2026</div><div class="timeline-title" data-i18n="tl5_t">2,500+ Học Viên</div><div class="timeline-text" data-i18n="tl5_d">Vươn tới 4 cơ sở, ra mắt SmallWorld App độc quyền</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="fade-up" style="display:flex;flex-direction:column;gap:20px;">
+          <div style="background:linear-gradient(135deg,var(--purple) 0%,var(--purple-dark) 100%);border-radius:20px;padding:36px;color:#fff;">
+            <div style="font-size:56px;margin-bottom:12px;">🌍</div>
+            <h3 style="font-family:var(--font-display);font-size:1.4rem;margin-bottom:12px;" data-i18n="vision_t">Tầm Nhìn</h3>
+            <p style="opacity:.9;line-height:1.7;font-size:.92rem;" data-i18n="vision_d">Trở thành trung tâm tiếng Anh hàng đầu Việt Nam, nơi mỗi học viên được trang bị khả năng giao tiếp toàn cầu và tự tin bước ra thế giới.</p>
+          </div>
+          <div style="background:var(--gold-light);border-radius:20px;padding:36px;border:2px solid var(--gold);">
+            <div style="font-size:56px;margin-bottom:12px;">🎯</div>
+            <h3 style="font-family:var(--font-display);font-size:1.4rem;color:var(--gold-dark);margin-bottom:12px;" data-i18n="mission_t">Sứ Mệnh</h3>
+            <p style="color:var(--gray-text);line-height:1.7;font-size:.92rem;" data-i18n="mission_d">Cung cấp môi trường học tập đẳng cấp quốc tế, kết hợp công nghệ và phương pháp giảng dạy tiên tiến để mỗi học viên đạt được mục tiêu tiếng Anh của mình.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values -->
+  <section style="background:var(--gray-light);">
+    <div class="container">
+      <div class="section-head fade-up">
+        <div class="section-tag" data-i18n="values_tag">Giá Trị Cốt Lõi</div>
+        <h2 class="section-title" data-i18n="values_title">Những Gì <span>Chúng Tôi Tin</span></h2>
+      </div>
+      <div class="grid-3">
+        <div class="value-card fade-up"><div class="value-icon">🏆</div><div class="value-title" data-i18n="v1_t">Chất Lượng Hàng Đầu</div><div class="value-text" data-i18n="v1_d">Chúng tôi không thỏa hiệp về chất lượng — từ giáo viên, giáo trình đến dịch vụ chăm sóc học viên.</div></div>
+        <div class="value-card fade-up"><div class="value-icon">❤️</div><div class="value-title" data-i18n="v2_t">Tận Tâm Với Học Viên</div><div class="value-text" data-i18n="v2_d">Mỗi học viên là một cá nhân đặc biệt với mục tiêu riêng — chúng tôi cam kết đồng hành trên từng bước đường.</div></div>
+        <div class="value-card fade-up"><div class="value-icon">🔬</div><div class="value-title" data-i18n="v3_t">Phương Pháp Khoa Học</div><div class="value-text" data-i18n="v3_d">Áp dụng nghiên cứu ngôn ngữ học hiện đại, lồng ghép công nghệ AI trong học tập cá nhân hóa.</div></div>
+        <div class="value-card fade-up"><div class="value-icon">🌱</div><div class="value-title" data-i18n="v4_t">Phát Triển Liên Tục</div><div class="value-text" data-i18n="v4_d">Chúng tôi không ngừng học hỏi và cải tiến để đem đến trải nghiệm học tập tốt nhất cho học viên.</div></div>
+        <div class="value-card fade-up"><div class="value-icon">🤝</div><div class="value-title" data-i18n="v5_t">Cộng Đồng Học Tập</div><div class="value-text" data-i18n="v5_d">Học viên Small World là một cộng đồng — hỗ trợ nhau, cùng nhau phát triển và chia sẻ cơ hội.</div></div>
+        <div class="value-card fade-up"><div class="value-icon">✅</div><div class="value-title" data-i18n="v6_t">Minh Bạch & Trung Thực</div><div class="value-text" data-i18n="v6_d">Cam kết rõ ràng về kết quả — nếu không đạt, chúng tôi hoàn tiền hoặc hỗ trợ học lại.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section>
+    <div class="container">
+      <div class="section-head fade-up">
+        <div class="section-tag" data-i18n="cert_tag">Chứng Nhận & Đối Tác</div>
+        <h2 class="section-title" data-i18n="cert_title">Được Công Nhận <span>Quốc Tế</span></h2>
+      </div>
+      <div class="grid-4">
+        <div class="fade-up" style="text-align:center;padding:28px 20px;background:var(--gray-light);border-radius:var(--radius);">
+          <div style="font-size:48px;margin-bottom:12px;">🏛️</div>
+          <div style="font-family:var(--font-head);font-weight:700;color:var(--purple-dark);margin-bottom:6px;">Cambridge English</div>
+          <div style="font-size:.82rem;color:var(--gray-text);" data-i18n="cert1">Trung Tâm Luyện Thi Chính Thức</div>
+        </div>
+        <div class="fade-up" style="text-align:center;padding:28px 20px;background:var(--gray-light);border-radius:var(--radius);">
+          <div style="font-size:48px;margin-bottom:12px;">📋</div>
+          <div style="font-family:var(--font-head);font-weight:700;color:var(--purple-dark);margin-bottom:6px;">IDP / British Council</div>
+          <div style="font-size:.82rem;color:var(--gray-text);" data-i18n="cert2">Đối Tác IELTS Chính Thức</div>
+        </div>
+        <div class="fade-up" style="text-align:center;padding:28px 20px;background:var(--gray-light);border-radius:var(--radius);">
+          <div style="font-size:48px;margin-bottom:12px;">🎓</div>
+          <div style="font-family:var(--font-head);font-weight:700;color:var(--purple-dark);margin-bottom:6px;">Bộ GD&ĐT</div>
+          <div style="font-size:.82rem;color:var(--gray-text);" data-i18n="cert3">Cơ Sở Giáo Dục Được Cấp Phép</div>
+        </div>
+        <div class="fade-up" style="text-align:center;padding:28px 20px;background:var(--gray-light);border-radius:var(--radius);">
+          <div style="font-size:48px;margin-bottom:12px;">⭐</div>
+          <div style="font-family:var(--font-head);font-weight:700;color:var(--purple-dark);margin-bottom:6px;">Google Rating 4.9/5</div>
+          <div style="font-size:.82rem;color:var(--gray-text);" data-i18n="cert4">Được đánh giá 4.9★ trên Google Maps</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ══════════════════════════════════════
+     PAGE: COURSE - KIDS
+══════════════════════════════════════ -->
+<div id="page-course-kids" class="page">
+  <div class="page-hero" style="background:linear-gradient(135deg,#FF6B9D 0%,#FF8E53 100%);">
+    <div class="container">
+      <div class="breadcrumb">Trang Chủ <span>›</span> Khóa Học <span>›</span> Tiếng Anh Trẻ Em</div>
+      <h1>🧒 Tiếng Anh Trẻ Em</h1>
+      <p data-i18n="kids_hero_sub">Chương trình đặc biệt cho bé 4–12 tuổi — học qua vui chơi, xây nền tảng vững chắc</p>
+    </div>
+  </div>
+  <section><div class="container">
+    <div class="grid-2">
+      <div>
+        <div class="section-tag fade-up">👶 4 – 12 Tuổi</div>
+        <h2 class="section-title fade-up">Nền Tảng <span>Tiếng Anh Vững Chắc</span> Từ Nhỏ</h2>
+        <p class="fade-up" style="color:var(--gray-text);line-height:1.8;margin-bottom:24px;" data-i18n="kids_p">Trẻ em học ngôn ngữ nhanh nhất trong giai đoạn 4–12 tuổi. Chương trình của chúng tôi tận dụng "cửa sổ vàng" này — kết hợp trò chơi, âm nhạc, và hoạt động sáng tạo để trẻ học tiếng Anh một cách tự nhiên và vui vẻ.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:28px;">
+          <div style="background:var(--purple-xlight);border-radius:12px;padding:16px;text-align:center;"><div style="font-size:28px;">🎮</div><div style="font-size:.82rem;color:var(--purple-dark);font-weight:600;margin-top:8px;" data-i18n="kids_f1">Học Qua Trò Chơi</div></div>
+          <div style="background:var(--purple-xlight);border-radius:12px;padding:16px;text-align:center;"><div style="font-size:28px;">🎵</div><div style="font-size:.82rem;color:var(--purple-dark);font-weight:600;margin-top:8px;" data-i18n="kids_f2">Bài Hát & Nhảy Múa</div></div>
+          <div style="background:var(--purple-xlight);border-radius:12px;padding:16px;text-align:center;"><div style="font-size:28px;">🎨</div><div style="font-size:.82rem;color:var(--purple-dark);font-weight:600;margin-top:8px;" data-i18n="kids_f3">Dự Án Sáng Tạo</div></div>
+          <div style="background:var(--purple-xlight);border-radius:12px;padding:16px;text-align:center;"><div style="font-size:28px;">📖</div><div style="font-size:.82rem;color:var(--purple-dark);font-weight:600;margin-top:8px;" data-i18n="kids_f4">Đọc Sách Tiếng Anh</div></div>
+        </div>
+        <button class="btn btn-primary" onclick="openModal()">🎁 Cho Bé Học Thử Miễn Phí</button>
+      </div>
+      <div class="fade-up">
+        <div style="background:var(--gray-light);border-radius:16px;padding:28px;">
+          <h3 style="font-family:var(--font-display);font-size:1.2rem;color:var(--purple-dark);margin-bottom:20px;">📋 Thông Tin Khóa Học</h3>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div style="display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--gray-mid);font-size:.9rem;"><span style="color:var(--gray-text);" data-i18n="info_age">Độ tuổi</span><strong>4 – 12 tuổi</strong></div>
+            <div style="display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--gray-mid);font-size:.9rem;"><span style="color:var(--gray-text);" data-i18n="info_class">Sĩ số lớp</span><strong>≤ 12 học viên</strong></div>
+            <div style="display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--gray-mid);font-size:.9rem;"><span style="color:var(--gray-text);" data-i18n="info_schedule">Lịch học</span><strong>T2-T4-T6 / T3-T5-T7</strong></div>
+            <div style="display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--gray-mid);font-size:.9rem;"><span style="color:var(--gray-text);" data-i18n="info_duration">Thời lượng</span><strong>90 phút/buổi</strong></div>
+            <div style="display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--gray-mid);font-size:.9rem;"><span style="color:var(--gray-text);" data-i18n="info_level">Cấp độ</span><strong>Starter → Elementary</strong></div>
+            <div style="display:flex;justify-content:space-between;padding:12px 0;font-size:.9rem;"><span style="color:var(--gray-text);" data-i18n="info_price">Học phí</span><strong style="color:var(--purple);">2.800.000đ/tháng</strong></div>
+          </div>
+          <button class="btn btn-gold" style="width:100%;margin-top:20px;justify-content:center;" onclick="openModal()">Đăng Ký Ngay</button>
+        </div>
+      </div>
+    </div>
+  </div></section>
+</div>
+
+<!-- ══════════════════════════════════════
+     PAGE: COURSE - COMM
+══════════════════════════════════════ -->
+<div id="page-course-comm" class="page">
+  <div class="page-hero" style="background:linear-gradient(135deg,#6B2FA0 0%,#9B5FD0 100%);">
+    <div class="container">
+      <div class="breadcrumb">Trang Chủ <span>›</span> Khóa Học <span>›</span> Tiếng Anh Giao Tiếp</div>
+      <h1>💬 Tiếng Anh Giao Tiếp</h1>
+      <p>Nói tiếng Anh tự nhiên, tự tin — áp dụng ngay trong cuộc sống và công việc</p>
+    </div>
+  </div>
+  <section><div class="container">
+    <div class="grid-2">
+      <div>
+        <div class="section-tag fade-up">💬 Communicative English</div>
+        <h2 class="section-title fade-up">Nói Tiếng Anh <span>Tự Nhiên</span> Như Người Bản Ngữ</h2>
+        <p class="fade-up" style="color:var(--gray-text);line-height:1.8;margin-bottom:24px;">Chương trình Tiếng Anh Giao Tiếp tập trung phát triển cả 4 kỹ năng với trọng tâm là khả năng nói và phản xạ ngôn ngữ. Học viên được đắm chìm trong môi trường tiếng Anh 100% với các tình huống thực tế.</p>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:12px;margin-bottom:28px;">
+          <li style="display:flex;gap:12px;align-items:flex-start;font-size:.9rem;color:var(--gray-text);"><span style="color:var(--gold);font-weight:700;font-size:1rem;">✓</span>Role-play tình huống thực tế: du lịch, công sở, mua sắm</li>
+          <li style="display:flex;gap:12px;align-items:flex-start;font-size:.9rem;color:var(--gray-text);"><span style="color:var(--gold);font-weight:700;font-size:1rem;">✓</span>Phát âm chuẩn giọng Mỹ/Anh theo lựa chọn</li>
+          <li style="display:flex;gap:12px;align-items:flex-start;font-size:.9rem;color:var(--gray-text);"><span style="color:var(--gold);font-weight:700;font-size:1rem;">✓</span>Club nói chuyện hàng tuần với người nước ngoài</li>
+          <li style="display:flex;gap:12px;align-items:flex-start;font-size:.9rem;color:var(--gray-text);"><span style="color:var(--gold);font-weight:700;font-size:1rem;">✓</span>Grammar tích hợp — không học thuộc vẹt, học qua giao tiếp</li>
+          <li style="display:flex;gap:12px;align-items:flex-start;font-size:.9rem;color:var(--gray-text);"><span style="color:var(--gold);font-weight:700;font-size:1rem;">✓</span>Video ghi hình buổi học — tự nhận xét, cải thiện</li>
+        </ul>
+        <button class="btn btn-primary" onclick="openModal()">🎁 Học Thử 1 Buổi Miễn Phí</button>
+      </div>
+      <div class="fade-up">
+        <div style="background:var(--gray-light);border-radius:16px;padding:28px;">
+          <h3 style="font-family:var(--font-display);font-size:1.2rem;color:var(--purple-dark);margin-bottom:20px;">📋 Thông Tin Khóa Học</h3>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div style="display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--gray-mid);font-size:.9rem;"><span style="color:var(--gray-text);">Đối tượng</span><strong>13 tuổi trở lên</strong></div>
+            <div style="display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--gray-mid);font-size:.9rem;"><span style="color:var(--gray-text);">Cấp độ</span><strong>A1 → C1 (6 cấp)</strong></div>
+            <div style="display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--gray-mid);font-size:.9rem;"><span style="color:var(--gray-text);">Sĩ số</span><strong>≤ 10 học viên</strong></div>
+            <div style="display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--gray-mid);font-size:.9rem;"><span style="color:var(--gray-text);">Lịch học</span><strong>Linh hoạt ngày/tối</strong></div>
+            <div style="display:flex;justify-content:space-between;padding:12px 0;font-size:.9rem;"><span style="color:var(--gray-text);">Học phí</span><strong style="color:var(--purple);">3.200.000đ/tháng</strong></div>
+          </div>
+          <button class="btn btn-gold" style="width:100%;margin-top:20px;justify-content:center;" onclick="openModal()">Đăng Ký Ngay</button>
+        </div>
+      </div>
+    </div>
+  </div></section>
+</div>
+
+<!-- ══════════════════════════════════════
+     PAGE: COURSE - IELTS
+══════════════════════════════════════ -->
+<div id="page-course-ielts" class="page">
+  <div class="page-hero" style="background:linear-gradient(135deg,#1A1028 0%,#4A1F70 100%);">
+    <div class="container">
+      <div class="breadcrumb">Trang Chủ <span>›</span> Khóa Học <span>›</span> IELTS/TOEFL</div>
+      <h1>📝 Luyện Thi IELTS / TOEFL</h1>
+      <p>Cam kết tăng 1.0 band score — đội ngũ giáo viên IELTS 8.0+ với 5 năm kinh nghiệm luyện thi</p>
+    </div>
+  </div>
+  <section><div class="container">
+    <div class="grid-2">
+      <div>
+        <div class="section-tag fade-up">📝 IELTS / TOEFL Prep</div>
+        <h2 class="section-title fade-up">Đạt Band <span>Mục Tiêu</span> Trong Thời Gian Ngắn Nhất</h2>
+        <p class="fade-up" style="color:var(--gray-text);line-height:1.8;margin-bottom:24px;">Chương trình IELTS/TOEFL của Small World được thiết kế bởi các giáo viên đã đạt band 8.0+ và có nhiều năm kinh nghiệm luyện thi. Học viên được luyện đề thật hàng tuần, nhận phản hồi chi tiết và chiến lược làm bài thi tối ưu.</p>
+        <div style="background:var(--purple-xlight);border-radius:12px;padding:20px;margin-bottom:24px;border-left:4px solid var(--purple);">
+          <strong style="font-family:var(--font-head);color:var(--purple-dark);">🎯 Cam Kết Đầu Ra:</strong>
+          <p style="margin-top:8px;font-size:.9rem;color:var(--gray-text);">Tăng tối thiểu 1.0 band score sau 4 tháng học — không đạt, Small World hỗ trợ học lại miễn phí đến khi đạt.</p>
+        </div>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:12px;margin-bottom:28px;">
+          <li style="display:flex;gap:12px;align-items:flex-start;font-size:.9rem;color:var(--gray-text);"><span style="color:var(--gold);font-weight:700;">✓</span>Luyện 4 kỹ năng: Listening, Reading, Writing, Speaking chuyên sâu</li>
+          <li style="display:flex;gap:12px;align-items:flex-start;font-size:.9rem;color:var(--gray-text);"><span style="color:var(--gold);font-weight:700;">✓</span>Mock test hàng tuần với đề thi thật từ Cambridge & IDP</li>
+          <li style="display:flex;gap:12px;align-items:flex-start;font-size:.9rem;color:var(--gray-text);"><span style="color:var(--gold);font-weight:700;">✓</span>Chữa bài Writing 1-1 với giáo viên bản ngữ</li>
+          <li style="display:flex;gap:12px;align-items:flex-start;font-size:.9rem;color:var(--gray-text);"><span style="color:var(--gold);font-weight:700;">✓</span>Speaking practice với examiner mô phỏng</li>
+          <li style="display:flex;gap:12px;align-items:flex-start;font-size:.9rem;color:var(--gray-text);"><span style="color:var(--gold);font-weight:700;">✓</span>Tài liệu học độc quyền + SmallWorld App luyện từ vựng</li>
+        </ul>
+        <button class="btn btn-primary" onclick="openModal()">🎁 Kiểm Tra Trình Độ Miễn Phí</button>
+      </div>
+      <div class="fade-up">
+        <div style="background:var(--gray-light);border-radius:16px;padding:28px;margin-bottom:20px;">
+          <h3 style="font-family:var(--font-display);font-size:1.2rem;color:var(--purple-dark);margin-bottom:20px;">📋 Thông Tin Khóa Học</h3>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div style="display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--gray-mid);font-size:.9rem;"><span style="color:var(--gray-text);">Thời gian</span><strong>4 – 8 tháng</strong></div>
+            <div style="display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--gray-mid);font-size:.9rem;"><span style="color:var(--gray-text);">Đầu vào tối thiểu</span><strong>Band 4.0 / B1</strong></div>
+            <div style="display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--gray-mid);font-size:.9rem;"><span style="color:var(--gray-text);">Sĩ số</span><strong>≤ 8 học viên</strong></div>
+            <div style="display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--gray-mid);font-size:.9rem;"><span style="color:var(--gray-text);">Mock test</span><strong>Hàng tuần</strong></div>
+            <div style="display:flex;justify-content:space-between;padding:12px 0;font-size:.9rem;"><span style="color:var(--gray-text);">Học phí</span><strong style="color:var(--purple);">4.500.000đ/tháng</strong></div>
+          </div>
+          <button class="btn btn-gold" style="width:100%;margin-top:20px;justify-content:center;" onclick="openModal()">Đăng Ký Ngay</button>
+        </div>
+        <div style="background:linear-gradient(135deg,var(--purple) 0%,var(--purple-dark) 100%);border-radius:16px;padding:24px;color:#fff;text-align:center;">
+          <div style="font-size:2.5rem;font-family:var(--font-display);font-weight:700;color:var(--gold);">94%</div>
+          <div style="font-size:.88rem;opacity:.9;margin-top:4px;">Học viên đạt band mục tiêu sau khóa học</div>
+        </div>
+      </div>
+    </div>
+  </div></section>
+</div>
+
+<!-- ══════════════════════════════════════
+     PAGE: COURSE - BIZ
+══════════════════════════════════════ -->
+<div id="page-course-biz" class="page">
+  <div class="page-hero" style="background:linear-gradient(135deg,#D4A017 0%,#A07810 100%);">
+    <div class="container">
+      <div class="breadcrumb">Trang Chủ <span>›</span> Khóa Học <span>›</span> Business English</div>
+      <h1>💼 Business English</h1>
+      <p>Tiếng Anh chuyên nghiệp cho người đi làm — thuyết trình, đàm phán, email, meetings</p>
+    </div>
+  </div>
+  <section><div class="container">
+    <div class="grid-2">
+      <div>
+        <div class="section-tag fade-up">💼 Corporate English</div>
+        <h2 class="section-title fade-up">Tiếng Anh <span>Công Sở</span> Đẳng Cấp Quốc Tế</h2>
+        <p class="fade-up" style="color:var(--gray-text);line-height:1.8;margin-bottom:24px;">Được thiết kế riêng cho người đi làm và doanh nhân — chương trình tập trung vào ngôn ngữ và kỹ năng thực tế trong môi trường kinh doanh quốc tế. Lớp học linh hoạt sáng sớm hoặc tối để phù hợp với lịch làm việc bận rộn.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:28px;">
+          <div style="background:var(--gold-light);border-radius:10px;padding:14px;text-align:center;border:1px solid var(--gold);"><div style="font-size:24px;">📊</div><div style="font-size:.78rem;color:var(--gold-dark);font-weight:600;margin-top:6px;">Thuyết Trình & Báo Cáo</div></div>
+          <div style="background:var(--gold-light);border-radius:10px;padding:14px;text-align:center;border:1px solid var(--gold);"><div style="font-size:24px;">🤝</div><div style="font-size:.78rem;color:var(--gold-dark);font-weight:600;margin-top:6px;">Đàm Phán Hợp Đồng</div></div>
+          <div style="background:var(--gold-light);border-radius:10px;padding:14px;text-align:center;border:1px solid var(--gold);"><div style="font-size:24px;">📧</div><div style="font-size:.78rem;color:var(--gold-dark);font-weight:600;margin-top:6px;">Email Chuyên Nghiệp</div></div>
+          <div style="background:var(--gold-light);border-radius:10px;padding:14px;text-align:center;border:1px solid var(--gold);"><div style="font-size:24px;">🎤</div><div style="font-size:.78rem;color:var(--gold-dark);font-weight:600;margin-top:6px;">Họp & Teleconference</div></div>
+        </div>
+        <button class="btn btn-primary" onclick="openModal()">🎁 Tư Vấn Khóa Học Miễn Phí</button>
+      </div>
+      <div class="fade-up">
+        <div style="background:var(--gray-light);border-radius:16px;padding:28px;">
+          <h3 style="font-family:var(--font-display);font-size:1.2rem;color:var(--purple-dark);margin-bottom:20px;">📋 Thông Tin Khóa Học</h3>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div style="display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--gray-mid);font-size:.9rem;"><span style="color:var(--gray-text);">Đối tượng</span><strong>Người đi làm & Doanh nhân</strong></div>
+            <div style="display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--gray-mid);font-size:.9rem;"><span style="color:var(--gray-text);">Lịch học</span><strong>6:30-8:00 / 19:30-21:00</strong></div>
+            <div style="display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--gray-mid);font-size:.9rem;"><span style="color:var(--gray-text);">Sĩ số</span><strong>≤ 8 học viên</strong></div>
+            <div style="display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--gray-mid);font-size:.9rem;"><span style="color:var(--gray-text);">1-1 Coaching</span><strong>2 buổi/tháng</strong></div>
+            <div style="display:flex;justify-content:space-between;padding:12px 0;font-size:.9rem;"><span style="color:var(--gray-text);">Học phí</span><strong style="color:var(--purple);">5.000.000đ/tháng</strong></div>
+          </div>
+          <button class="btn btn-gold" style="width:100%;margin-top:20px;justify-content:center;" onclick="openModal()">Đăng Ký Ngay</button>
+        </div>
+      </div>
+    </div>
+  </div></section>
+</div>
+
+<!-- ══════════════════════════════════════
+     PAGE: TEACHERS
+══════════════════════════════════════ -->
+<div id="page-teachers" class="page">
+  <div class="page-hero">
+    <div class="container">
+      <div class="breadcrumb">Trang Chủ <span>›</span> Giáo Viên</div>
+      <h1 data-i18n="teachers_h1">Đội Ngũ Giáo Viên</h1>
+      <p data-i18n="teachers_h1_sub">15 giáo viên bản ngữ, chứng chỉ CELTA/DELTA, kinh nghiệm tối thiểu 5 năm</p>
+    </div>
+  </div>
+  <section>
+    <div class="container">
+      <div class="section-head fade-up">
+        <div class="section-tag" data-i18n="teachers_tag">Gặp Gỡ Đội Ngũ Của Chúng Tôi</div>
+        <h2 class="section-title" data-i18n="teachers_title">Giáo Viên <span>Tận Tâm & Chuyên Nghiệp</span></h2>
+        <p class="section-sub" data-i18n="teachers_sub">Mỗi giáo viên được tuyển chọn kỹ lưỡng — không chỉ giỏi tiếng Anh, mà còn có khả năng truyền cảm hứng và kết nối với học viên</p>
+      </div>
+      <div class="grid-3">
+        <div class="teacher-card fade-up">
+          <div class="teacher-avatar">🇺🇸</div>
+          <div class="teacher-name">James Mitchell</div>
+          <div class="teacher-title">Head of IELTS Department</div>
+          <div class="teacher-bio">IELTS 8.5 | 12 năm kinh nghiệm luyện thi | Từng giảng dạy tại IDP Australia</div>
+          <div class="teacher-tags"><span class="teacher-tag">IELTS</span><span class="teacher-tag">CELTA</span><span class="teacher-tag">Cambridge</span></div>
+        </div>
+        <div class="teacher-card fade-up">
+          <div class="teacher-avatar">🇬🇧</div>
+          <div class="teacher-name">Sarah Thompson</div>
+          <div class="teacher-title">Kids Program Director</div>
+          <div class="teacher-bio">DELTA | 9 năm dạy trẻ em | Chuyên gia phương pháp TPR và Story-telling</div>
+          <div class="teacher-tags"><span class="teacher-tag">Kids</span><span class="teacher-tag">DELTA</span><span class="teacher-tag">TPR</span></div>
+        </div>
+        <div class="teacher-card fade-up">
+          <div class="teacher-avatar">🇨🇦</div>
+          <div class="teacher-name">Michael Brown</div>
+          <div class="teacher-title">Business English Lead</div>
+          <div class="teacher-bio">MBA Harvard | 10 năm trong môi trường kinh doanh quốc tế | Chuyên gia đào tạo doanh nhân</div>
+          <div class="teacher-tags"><span class="teacher-tag">Business</span><span class="teacher-tag">MBA</span><span class="teacher-tag">Corporate</span></div>
+        </div>
+        <div class="teacher-card fade-up">
+          <div class="teacher-avatar">🇦🇺</div>
+          <div class="teacher-name">Emily Clarke</div>
+          <div class="teacher-title">Communicative English Expert</div>
+          <div class="teacher-bio">CELTA | 7 năm kinh nghiệm | Chuyên gia pronunciation và accent reduction</div>
+          <div class="teacher-tags"><span class="teacher-tag">Speaking</span><span class="teacher-tag">CELTA</span><span class="teacher-tag">Pronunciation</span></div>
+        </div>
+        <div class="teacher-card fade-up">
+          <div class="teacher-avatar">🇳🇿</div>
+          <div class="teacher-name">David Wilson</div>
+          <div class="teacher-title">Senior IELTS Instructor</div>
+          <div class="teacher-bio">IELTS 8.0 | 8 năm kinh nghiệm | Đã đào tạo 200+ học viên đạt band 7.0+</div>
+          <div class="teacher-tags"><span class="teacher-tag">IELTS</span><span class="teacher-tag">Writing</span><span class="teacher-tag">Speaking</span></div>
+        </div>
+        <div class="teacher-card fade-up">
+          <div class="teacher-avatar">🇿🇦</div>
+          <div class="teacher-name">Rebecca Adams</div>
+          <div class="teacher-title">General English Instructor</div>
+          <div class="teacher-bio">CELTA | 6 năm kinh nghiệm | Chuyên gia dạy người mới bắt đầu và intermediate</div>
+          <div class="teacher-tags"><span class="teacher-tag">General</span><span class="teacher-tag">CELTA</span><span class="teacher-tag">Beginner</span></div>
+        </div>
+      </div>
+      <div style="margin-top:48px;background:var(--gray-light);border-radius:20px;padding:40px;text-align:center;" class="fade-up">
+        <h3 style="font-family:var(--font-display);font-size:1.5rem;color:var(--purple-dark);margin-bottom:12px;" data-i18n="teachers_cta_t">Muốn Học Với Giáo Viên Phù Hợp Nhất?</h3>
+        <p style="color:var(--gray-text);margin-bottom:24px;" data-i18n="teachers_cta_d">Đội ngũ tư vấn sẽ giúp bạn chọn giáo viên phù hợp với mục tiêu và phong cách học của bạn</p>
+        <button class="btn btn-primary" onclick="openModal()" data-i18n="teachers_cta_btn">Đặt Lịch Tư Vấn Miễn Phí</button>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ══════════════════════════════════════
+     PAGE: BLOG
+══════════════════════════════════════ -->
+<div id="page-blog" class="page">
+  <div class="page-hero">
+    <div class="container">
+      <div class="breadcrumb">Trang Chủ <span>›</span> Blog</div>
+      <h1>Blog & Kiến Thức Tiếng Anh</h1>
+      <p>Chia sẻ kinh nghiệm, tips và bí quyết học tiếng Anh hiệu quả từ đội ngũ giáo viên Small World</p>
+    </div>
+  </div>
+  <section>
+    <div class="container">
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:40px;" class="fade-up">
+        <button onclick="filterBlog('all')" class="btn btn-primary" id="filter-all" style="padding:8px 20px;font-size:.85rem;">Tất Cả</button>
+        <button onclick="filterBlog('ielts')" class="btn btn-outline" id="filter-ielts" style="padding:8px 20px;font-size:.85rem;">IELTS</button>
+        <button onclick="filterBlog('kids')" class="btn btn-outline" id="filter-kids" style="padding:8px 20px;font-size:.85rem;">Trẻ Em</button>
+        <button onclick="filterBlog('business')" class="btn btn-outline" id="filter-business" style="padding:8px 20px;font-size:.85rem;">Business</button>
+        <button onclick="filterBlog('tips')" class="btn btn-outline" id="filter-tips" style="padding:8px 20px;font-size:.85rem;">Tips Học Tiếng Anh</button>
+      </div>
+      <div class="grid-3" id="blogGrid">
+        <div class="blog-card fade-up" data-cat="ielts">
+          <div class="blog-img">📝</div>
+          <div class="blog-body">
+            <div class="blog-meta">12/05/2026 · IELTS</div>
+            <div class="blog-title">7 Bí Quyết Viết IELTS Writing Task 2 Đạt Band 7.0+</div>
+            <div class="blog-excerpt">Chiến lược đã được kiểm chứng qua 500+ học viên — từ cách mở bài, phân tích luận điểm đến kết luận ấn tượng...</div>
+            <a class="blog-readmore">Đọc thêm →</a>
+          </div>
+        </div>
+        <div class="blog-card fade-up" data-cat="kids">
+          <div class="blog-img">🎮</div>
+          <div class="blog-body">
+            <div class="blog-meta">05/05/2026 · Trẻ Em</div>
+            <div class="blog-title">Dạy Tiếng Anh Cho Trẻ Qua Game: Phương Pháp TPR</div>
+            <div class="blog-excerpt">Total Physical Response (TPR) là phương pháp khoa học nhất để trẻ tiếp thu ngôn ngữ một cách tự nhiên và vui vẻ...</div>
+            <a class="blog-readmore">Đọc thêm →</a>
+          </div>
+        </div>
+        <div class="blog-card fade-up" data-cat="business">
+          <div class="blog-img">💼</div>
+          <div class="blog-body">
+            <div class="blog-meta">28/04/2026 · Business</div>
+            <div class="blog-title">10 Cụm Từ Tiếng Anh Chuyên Nghiệp Trong Meeting</div>
+            <div class="blog-excerpt">Những câu nói giúp bạn tự tin và chuyên nghiệp hơn trong mọi cuộc họp với đối tác quốc tế...</div>
+            <a class="blog-readmore">Đọc thêm →</a>
+          </div>
+        </div>
+        <div class="blog-card fade-up" data-cat="tips">
+          <div class="blog-img">🧠</div>
+          <div class="blog-body">
+            <div class="blog-meta">20/04/2026 · Tips</div>
+            <div class="blog-title">Spaced Repetition: Phương Pháp Nhớ Từ Vựng Gấp 5 Lần</div>
+            <div class="blog-excerpt">Khoa học thần kinh cho thấy học từ vựng theo khoảng cách lặp lại (spaced repetition) hiệu quả hơn học thuộc lòng 500%...</div>
+            <a class="blog-readmore">Đọc thêm →</a>
+          </div>
+        </div>
+        <div class="blog-card fade-up" data-cat="ielts">
+          <div class="blog-img">🎧</div>
+          <div class="blog-body">
+            <div class="blog-meta">15/04/2026 · IELTS</div>
+            <div class="blog-title">IELTS Listening: Bẫy Thường Gặp & Cách Tránh</div>
+            <div class="blog-excerpt">Phần Listening tưởng dễ nhưng đầy bẫy — đây là danh sách các lỗi sai phổ biến nhất và cách tránh trong ngày thi...</div>
+            <a class="blog-readmore">Đọc thêm →</a>
+          </div>
+        </div>
+        <div class="blog-card fade-up" data-cat="tips">
+          <div class="blog-img">📱</div>
+          <div class="blog-body">
+            <div class="blog-meta">08/04/2026 · Tips</div>
+            <div class="blog-title">5 App Học Tiếng Anh Miễn Phí Tốt Nhất 2026</div>
+            <div class="blog-excerpt">Những ứng dụng được giáo viên Small World khuyên dùng để luyện tập ngoài giờ học — Duolingo, Anki, ELSA và hơn thế nữa...</div>
+            <a class="blog-readmore">Đọc thêm →</a>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:40px;" class="fade-up">
+        <button class="btn btn-outline">Xem Thêm Bài Viết</button>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ══════════════════════════════════════
+     PAGE: FAQ
+══════════════════════════════════════ -->
+<div id="page-faq" class="page">
+  <div class="page-hero">
+    <div class="container">
+      <div class="breadcrumb">Trang Chủ <span>›</span> FAQ</div>
+      <h1>Câu Hỏi Thường Gặp</h1>
+      <p>Tìm câu trả lời nhanh cho mọi thắc mắc về Small World English Center</p>
+    </div>
+  </div>
+  <section>
+    <div class="container" style="max-width:780px;">
+      <div id="faqList">
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)"><span>Học thử miễn phí hoạt động như thế nào?</span><div class="faq-icon">+</div></div>
+          <div class="faq-a">Bạn đăng ký trực tuyến → Tư vấn viên liên hệ trong 2 tiếng → Đặt lịch buổi học thử → Tham gia lớp học thật với giáo viên bản ngữ. Hoàn toàn miễn phí, không cần cọc tiền hay ký hợp đồng.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)"><span>Small World có cam kết đầu ra không?</span><div class="faq-icon">+</div></div>
+          <div class="faq-a">Có. Chúng tôi cam kết học viên đạt được mục tiêu đề ra khi bắt đầu khóa học. Nếu không đạt (do đủ điều kiện), Small World hỗ trợ học lại miễn phí hoặc hoàn tiền theo điều khoản cam kết.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)"><span>Lớp học có bao nhiêu học viên?</span><div class="faq-icon">+</div></div>
+          <div class="faq-a">Chúng tôi giới hạn sĩ số để đảm bảo chất lượng: Lớp trẻ em ≤12 học viên | Lớp giao tiếp ≤10 học viên | Lớp IELTS ≤8 học viên | Lớp Business ≤8 học viên. Không bao giờ nhồi nhét lớp đông.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)"><span>Tôi có thể học bù nếu nghỉ không?</span><div class="faq-icon">+</div></div>
+          <div class="faq-a">Có. Học viên được phép học bù miễn phí trong vòng 30 ngày kể từ ngày nghỉ. Bạn chỉ cần báo trước 24 tiếng và đặt lịch học bù qua app hoặc hotline.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)"><span>Học phí có thể trả góp không?</span><div class="faq-icon">+</div></div>
+          <div class="faq-a">Có. Small World hỗ trợ trả góp 0% lãi suất qua thẻ tín dụng Visa/Mastercard từ 6-12 tháng. Hoặc thanh toán theo tháng với khóa học ngắn hạn.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)"><span>Giáo viên có nói tiếng Việt không?</span><div class="faq-icon">+</div></div>
+          <div class="faq-a">Lớp học được dạy 100% bằng tiếng Anh để tạo môi trường immersion. Tuy nhiên, Small World có đội tư vấn học vụ người Việt hỗ trợ học viên trong các vấn đề ngoài giờ học.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)"><span>Tôi bắt đầu từ level nào?</span><div class="faq-icon">+</div></div>
+          <div class="faq-a">Trước khi vào học, tất cả học viên làm bài kiểm tra trình độ miễn phí (30 phút). Dựa trên kết quả, tư vấn viên sẽ đề xuất khóa học và level phù hợp nhất với bạn.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)"><span>Có chương trình gia đình hay nhóm không?</span><div class="faq-icon">+</div></div>
+          <div class="faq-a">Có. Học viên giới thiệu bạn bè hoặc gia đình sẽ nhận voucher giảm 10% học phí. Đăng ký nhóm từ 3 người trở lên được hưởng học phí ưu đãi đặc biệt.</div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:48px;background:var(--purple-xlight);border-radius:16px;padding:32px;" class="fade-up">
+        <h3 style="font-family:var(--font-display);font-size:1.3rem;color:var(--purple-dark);margin-bottom:8px;">Vẫn còn thắc mắc?</h3>
+        <p style="color:var(--gray-text);margin-bottom:20px;">Đội ngũ tư vấn sẵn sàng hỗ trợ bạn 7 ngày/tuần</p>
+        <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+          <button class="btn btn-primary" onclick="goPage('contact')">💬 Liên Hệ Ngay</button>
+          <a href="tel:0901234567" class="btn btn-outline">📞 0901 234 567</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ══════════════════════════════════════
+     PAGE: CONTACT
+══════════════════════════════════════ -->
+<div id="page-contact" class="page">
+  <div class="page-hero">
+    <div class="container">
+      <div class="breadcrumb">Trang Chủ <span>›</span> Liên Hệ</div>
+      <h1 data-i18n="contact_h1">Liên Hệ Với Chúng Tôi</h1>
+      <p data-i18n="contact_h1_sub">Đội ngũ tư vấn sẵn sàng hỗ trợ bạn từ 7:00 — 21:00, 7 ngày/tuần</p>
+    </div>
+  </div>
+  <section>
+    <div class="container">
+      <div class="grid-2">
+        <div>
+          <h2 class="section-title fade-up" style="margin-bottom:32px;" data-i18n="contact_title">Gửi Yêu Cầu <span>Tư Vấn</span></h2>
+          <form id="contactForm" onsubmit="submitContact(event)" class="fade-up">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" data-i18n="form_name">Họ & Tên *</label>
+                <input type="text" class="form-input" placeholder="Nguyễn Văn A" required/>
+              </div>
+              <div class="form-group">
+                <label class="form-label" data-i18n="form_phone">Số Điện Thoại *</label>
+                <input type="tel" class="form-input" placeholder="0901 234 567" required/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" data-i18n="form_email">Email</label>
+              <input type="email" class="form-input" placeholder="email@gmail.com"/>
+            </div>
+            <div class="form-group">
+              <label class="form-label" data-i18n="form_interest">Khóa Học Quan Tâm</label>
+              <select class="form-select">
+                <option value="">-- Chọn khóa học --</option>
+                <option>Tiếng Anh Trẻ Em (4-12 tuổi)</option>
+                <option>Tiếng Anh Giao Tiếp</option>
+                <option>Luyện Thi IELTS/TOEFL</option>
+                <option>Business English</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" data-i18n="form_message">Tin Nhắn</label>
+              <textarea class="form-textarea" placeholder="Mô tả mục tiêu và tình trạng tiếng Anh hiện tại của bạn..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;" data-i18n="form_submit">Gửi Yêu Cầu Tư Vấn →</button>
+          </form>
+          <div id="contactSuccess" style="display:none;text-align:center;padding:32px;background:var(--purple-xlight);border-radius:16px;margin-top:20px;">
+            <div style="font-size:48px;">✅</div>
+            <h3 style="font-family:var(--font-display);color:var(--purple-dark);margin:12px 0 8px;" data-i18n="contact_success_t">Đã Nhận Yêu Cầu!</h3>
+            <p style="color:var(--gray-text);font-size:.9rem;" data-i18n="contact_success_d">Tư vấn viên sẽ liên hệ với bạn trong vòng 30 phút trong giờ làm việc.</p>
+          </div>
+        </div>
+        <div class="fade-up">
+          <h3 style="font-family:var(--font-display);font-size:1.4rem;color:var(--purple-dark);margin-bottom:28px;" data-i18n="contact_info_t">Thông Tin Liên Hệ</h3>
+          <div class="contact-info-item">
+            <div class="contact-info-icon">📍</div>
+            <div><div class="contact-info-label">Trung Tâm (Trụ Sở Chính)</div><div class="contact-info-value">01 Tôn Đức Thắng, Long Xuyên, Long Xuyên, An Giang</div></div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon">📍</div>
+            <div><div class="contact-info-label">Chi Nhánh</div><div class="contact-info-value">88 Trần Hưng Đạo, Long Xuyên, Long Xuyên, An Giang</div></div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon">📞</div>
+            <div><div class="contact-info-label">Hotline (7:00 — 21:00)</div><div class="contact-info-value">0901 234 567</div></div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon">📧</div>
+            <div><div class="contact-info-label">Email</div><div class="contact-info-value">hello@smallworld.com</div></div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon">🕐</div>
+            <div><div class="contact-info-label">Giờ Làm Việc</div><div class="contact-info-value">Thứ 2 — Chủ Nhật: 7:00 — 21:00</div></div>
+          </div>
+          <div class="map-box" style="margin-top:24px;">
+            <span>🗺️</span>
+            <p>Google Maps — Tôn Đức Thắng, TP. Long Xuyên, An Giang</p>
+            <a href="https://maps.google.com" target="_blank" class="btn btn-outline" style="font-size:.82rem;padding:8px 20px;">Xem Bản Đồ</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ══════════════════════════════════════
+     MODAL: FREE TRIAL BOOKING
+══════════════════════════════════════ -->
+<div class="modal-overlay" id="trialModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div id="modalForm">
+      <div style="text-align:center;margin-bottom:24px;">
+        <div style="font-size:48px;margin-bottom:8px;">🎁</div>
+        <div class="modal-title" data-i18n="modal_title">Đăng Ký Học Thử Miễn Phí</div>
+        <div class="modal-sub" data-i18n="modal_sub">Điền thông tin để đặt lịch — Tư vấn viên liên hệ trong 30 phút</div>
+      </div>
+      <form onsubmit="submitTrial(event)">
+        <div class="form-group">
+          <label class="form-label" data-i18n="form_name">Họ & Tên *</label>
+          <input type="text" class="form-input" placeholder="Nguyễn Văn A" required/>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" data-i18n="form_phone">Số Điện Thoại *</label>
+            <input type="tel" class="form-input" placeholder="0901 234 567" required/>
+          </div>
+          <div class="form-group">
+            <label class="form-label" data-i18n="form_age_student">Tuổi Học Viên</label>
+            <input type="text" class="form-input" placeholder="Ví dụ: 25 tuổi"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" data-i18n="form_course_choose">Khóa Học *</label>
+          <select class="form-select" required>
+            <option value="">-- Chọn khóa học quan tâm --</option>
+            <option>Tiếng Anh Trẻ Em (4-12 tuổi)</option>
+            <option>Tiếng Anh Giao Tiếp</option>
+            <option>Luyện Thi IELTS/TOEFL</option>
+            <option>Business English</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" data-i18n="form_schedule_pref">Lịch Học Ưa Thích</label>
+          <select class="form-select">
+            <option value="">-- Chọn khung giờ --</option>
+            <option>Sáng (7:00 - 11:00)</option>
+            <option>Chiều (13:00 - 17:00)</option>
+            <option>Tối (17:30 - 21:00)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" data-i18n="form_goal">Mục Tiêu Tiếng Anh</label>
+          <input type="text" class="form-input" placeholder="VD: Đạt IELTS 7.0 để du học..."/>
+        </div>
+        <div class="form-check form-group">
+          <input type="checkbox" id="agreeCheck" required/>
+          <label for="agreeCheck" style="font-size:.82rem;color:var(--gray-text);" data-i18n="form_agree">Tôi đồng ý nhận thông tin từ Small World English Center</label>
+        </div>
+        <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center;" data-i18n="modal_submit">🎁 Xác Nhận Đăng Ký Học Thử</button>
+      </form>
+    </div>
+    <div class="success-msg" id="successMsg">
+      <span>🎉</span>
+      <h3 data-i18n="success_t">Đăng Ký Thành Công!</h3>
+      <p data-i18n="success_d">Tư vấn viên sẽ liên hệ với bạn trong vòng 30 phút. Hẹn gặp bạn tại Small World!</p>
+      <button class="btn btn-primary" onclick="closeModal()" style="margin-top:16px;" data-i18n="success_btn">Đóng</button>
+    </div>
+  </div>
+</div>
+
+<!-- FLOATING BUTTONS -->
+<div class="float-zalo">
+  <a href="https://zalo.me/0901234567" target="_blank" title="Chat Zalo">💬</a>
+</div>
+<div class="float-phone">
+  <a href="tel:0901234567" title="Gọi ngay">📞</a>
+</div>
+<div class="back-top" id="backTop">
+  <button onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">Small World English Center</div>
+        <p class="footer-desc" data-i18n="footer_desc">Trung tâm tiếng Anh cao cấp — đào tạo hơn 2,500 học viên với đội ngũ 15 giáo viên bản ngữ chuyên nghiệp. Cam kết đầu ra. Chất lượng chuẩn quốc tế.</p>
+        <div class="social-links" style="margin-top:16px;">
+          <a class="social-link" href="#" title="Facebook">f</a>
+          <a class="social-link" href="#" title="Instagram">📷</a>
+          <a class="social-link" href="#" title="YouTube">▶</a>
+          <a class="social-link" href="#" title="TikTok">♪</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-heading" data-i18n="footer_courses">Khóa Học</div>
+        <ul class="footer-links">
+          <li><a onclick="goPage('course-kids')">Tiếng Anh Trẻ Em</a></li>
+          <li><a onclick="goPage('course-comm')">Tiếng Anh Giao Tiếp</a></li>
+          <li><a onclick="goPage('course-ielts')">Luyện Thi IELTS/TOEFL</a></li>
+          <li><a onclick="goPage('course-biz')">Business English</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-heading" data-i18n="footer_quick">Thông Tin</div>
+        <ul class="footer-links">
+          <li><a onclick="goPage('about')">Về Chúng Tôi</a></li>
+          <li><a onclick="goPage('teachers')">Đội Ngũ Giáo Viên</a></li>
+          <li><a onclick="goPage('blog')">Blog & Kiến Thức</a></li>
+          <li><a onclick="goPage('faq')">Câu Hỏi Thường Gặp</a></li>
+          <li><a onclick="goPage('contact')">Liên Hệ</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-heading" data-i18n="footer_contact">Liên Hệ</div>
+        <ul class="footer-links">
+          <li><a href="tel:0901234567">📞 0901 234 567</a></li>
+          <li><a href="mailto:hello@smallworld.com">✉️ hello@smallworld.com</a></li>
+          <li><a>📍 01 Tôn Đức Thắng, Long Xuyên, Long Xuyên, An Giang</a></li>
+          <li><a>🕐 T2-CN: 7:00 — 21:00</a></li>
+        </ul>
+        <button class="btn btn-gold" style="margin-top:16px;font-size:.82rem;padding:10px 20px;" onclick="openModal()" data-i18n="footer_cta">Học Thử Miễn Phí</button>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p data-i18n="footer_copy">© 2026 Small World English Center. Bảo lưu mọi quyền.</p>
+      <p>
+        <a href="#" style="opacity:.6;font-size:.8rem;margin-right:16px;" data-i18n="footer_privacy">Chính Sách Bảo Mật</a>
+        <a href="#" style="opacity:.6;font-size:.8rem;" data-i18n="footer_terms">Điều Khoản Dịch Vụ</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<!-- COOKIE BANNER -->
+<div class="cookie-banner" id="cookieBanner">
+  <p data-i18n="cookie_text">Chúng tôi dùng cookies để cải thiện trải nghiệm của bạn. Bằng cách tiếp tục, bạn đồng ý với <a href="#" style="color:var(--gold);">chính sách cookies</a> của chúng tôi.</p>
+  <div class="cookie-btns">
+    <button class="cookie-accept" onclick="acceptCookie()" data-i18n="cookie_accept">Đồng Ý</button>
+    <button class="cookie-decline" onclick="declineCookie()" data-i18n="cookie_decline">Từ Chối</button>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     JAVASCRIPT
+══════════════════════════════════════ -->
+<script>
+// ── TRANSLATIONS ──
+const translations = {
+  vi: {
+    nav_home:'Trang Chủ',nav_about:'Về Chúng Tôi',nav_courses:'Khóa Học ▾',nav_teachers:'Giáo Viên',
+    nav_blog:'Blog',nav_contact:'Liên Hệ',nav_faq:'FAQ',nav_trial:'Học Thử Miễn Phí',
+    hero_tag:'Trung Tâm Tiếng Anh Premium tại Long Xuyên, An Giang',
+    hero_title:'Mở Cánh Cửa <span>Thế Giới</span> Bằng Tiếng Anh',
+    hero_sub:'Chương trình đào tạo chuẩn quốc tế — Giáo viên bản ngữ có chứng chỉ — Phương pháp học thực tế, hiệu quả từ buổi đầu tiên.',
+    hero_cta1:'Học Thử Miễn Phí',hero_cta2:'Tìm Hiểu Thêm',
+    stat1:'Học Viên',stat2:'Giáo Viên Bản Ngữ',stat3:'% Hài Lòng',stat4:'Năm Kinh Nghiệm',
+    trust1:'Chứng Nhận Cambridge',trust2:'Giáo Viên Bản Ngữ',trust3:'Cam Kết Đầu Ra',
+    trust4:'Hỗ Trợ Trả Góp 0%',trust5:'Học Bù Miễn Phí',
+    courses_tag:'Chương Trình Đào Tạo',
+    courses_title:'4 Chương Trình <span>Chuyên Biệt</span>',
+    courses_sub:'Thiết kế riêng cho từng đối tượng — từ trẻ em 4 tuổi đến doanh nhân cấp cao',
+    c1_name:'Tiếng Anh Trẻ Em',c1_age:'4 – 12 tuổi',c1_f1:'Học qua trò chơi & âm nhạc',c1_f2:'Phát âm chuẩn từ nhỏ',c1_f3:'Lớp nhỏ ≤12 học viên',
+    c2_name:'Tiếng Anh Giao Tiếp',c2_age:'13 tuổi trở lên',c2_f1:'4 kỹ năng Nghe-Nói-Đọc-Viết',c2_f2:'Tình huống thực tế',c2_f3:'Luyện phản xạ tự nhiên',
+    c3_name:'IELTS / TOEFL',c3_age:'Luyện thi cấp tốc',c3_f1:'Cam kết tăng 1.0 band score',c3_f2:'Luyện đề thật hàng tuần',c3_f3:'Giáo viên IELTS 8.0+',
+    c4_name:'Business English',c4_age:'Người đi làm & Doanh nhân',c4_f1:'Thuyết trình & đàm phán',c4_f2:'Email & báo cáo chuyên nghiệp',c4_f3:'Lịch linh hoạt sáng/tối',
+    per_month:'/tháng',try_free:'Đăng Ký Học Thử',
+    why_tag:'Tại Sao Chọn Chúng Tôi?',why_title:'Hơn 8 Năm Kiến Tạo <span>Thành Công</span> Cho Học Viên',
+    why_sub:'Small World không chỉ dạy tiếng Anh — chúng tôi xây dựng sự tự tin và năng lực giao tiếp toàn cầu.',
+    why1_t:'Cam Kết Đầu Ra',why1_d:'Không đạt mục tiêu — hoàn tiền 100% hoặc học lại miễn phí',
+    why2_t:'Giáo Viên Chất Lượng Cao',why2_d:'100% giáo viên có chứng chỉ CELTA/DELTA, kinh nghiệm tối thiểu 5 năm',
+    why3_t:'App Học Online Riêng',why3_d:'Luyện tập mọi lúc, mọi nơi với ứng dụng SmallWorld App độc quyền',
+    why4_t:'Chứng Chỉ Được Công Nhận',why4_d:'Chứng chỉ Small World được nhà tuyển dụng và trường quốc tế công nhận',
+    learn_more:'Khám Phá Thêm →',result_title:'Kết Quả Thực Tế Từ Học Viên',
+    r1:'Học viên IELTS đạt band mục tiêu sau 4 tháng',r2:'Tăng lương sau khi hoàn thành Business English',r3:'Tốc độ tiến bộ so với tự học tại nhà',
+    book_trial:'Đặt Lịch Tư Vấn Miễn Phí',
+    stats1:'Học Viên Đã Tốt Nghiệp',stats2:'Giáo Viên Bản Ngữ',stats3:'Cơ Sở Long Xuyên, An Giang',stats4:'Năm Kinh Nghiệm',
+    testi_tag:'Học Viên Nói Gì?',testi_title:'Hàng Nghìn <span>Câu Chuyện Thành Công</span>',
+    t1:'"Con tôi từ sợ nói tiếng Anh đến tự tin thuyết trình sau 6 tháng học tại Small World."',t1_role:'Phụ huynh học viên lớp Kids',
+    t2:'"IELTS của tôi từ 5.5 lên 7.0 sau 5 tháng — Small World là nơi duy nhất tôi thực sự tiến bộ."',t2_role:'Học viên IELTS — Đạt 7.0 Band',
+    t3:'"Được thăng chức và tăng lương 50% sau 8 tháng học Business English. Đầu tư xứng đáng nhất!"',t3_role:'Business English — Marketing Manager',
+    blog_tag:'Blog & Kiến Thức',blog_title:'Góc Học Tiếng Anh <span>Hiệu Quả</span>',
+    b1:'7 Bí Quyết Viết IELTS Writing Task 2 Đạt Band 7.0+',b1_ex:'Chiến lược được đúc kết từ hàng trăm học viên đạt band mục tiêu...',
+    b2:'Dạy Tiếng Anh Cho Trẻ Qua Game: Phương Pháp TPR',b2_ex:'TPR là phương pháp khoa học nhất để trẻ học ngôn ngữ tự nhiên...',
+    b3:'10 Cụm Từ Tiếng Anh Chuyên Nghiệp Trong Meeting',b3_ex:'Những câu nói giúp bạn tự tin trong cuộc họp với đối tác quốc tế...',
+    read_more:'Đọc thêm →',
+    cta_title:'Sẵn Sàng Bắt Đầu Hành Trình Của Bạn?',
+    cta_sub:'Đăng ký ngay hôm nay — học thử 1 buổi miễn phí, không ràng buộc.',
+    cta_btn1:'🎁 Học Thử Miễn Phí',cta_btn2:'📞 Gọi Tư Vấn Ngay',
+    modal_title:'Đăng Ký Học Thử Miễn Phí',modal_sub:'Điền thông tin — Tư vấn viên liên hệ trong 30 phút',
+    form_name:'Họ & Tên *',form_phone:'Số Điện Thoại *',form_email:'Email',
+    form_interest:'Khóa Học Quan Tâm',form_message:'Tin Nhắn',form_submit:'Gửi Yêu Cầu Tư Vấn →',
+    form_age_student:'Tuổi Học Viên',form_course_choose:'Khóa Học *',form_schedule_pref:'Lịch Học Ưa Thích',
+    form_goal:'Mục Tiêu Tiếng Anh',form_agree:'Tôi đồng ý nhận thông tin từ Small World',
+    modal_submit:'🎁 Xác Nhận Đăng Ký Học Thử',
+    success_t:'Đăng Ký Thành Công!',success_d:'Tư vấn viên sẽ liên hệ trong vòng 30 phút. Hẹn gặp bạn!',success_btn:'Đóng',
+    contact_h1:'Liên Hệ Với Chúng Tôi',contact_h1_sub:'Đội ngũ tư vấn sẵn sàng hỗ trợ 7:00—21:00, 7 ngày/tuần',
+    contact_title:'Gửi Yêu Cầu <span>Tư Vấn</span>',contact_info_t:'Thông Tin Liên Hệ',
+    contact_success_t:'Đã Nhận Yêu Cầu!',contact_success_d:'Tư vấn viên sẽ liên hệ trong vòng 30 phút.',
+    teachers_h1:'Đội Ngũ Giáo Viên',teachers_h1_sub:'15 giáo viên bản ngữ, chứng chỉ CELTA/DELTA',
+    teachers_tag:'Gặp Gỡ Đội Ngũ',teachers_title:'Giáo Viên <span>Tận Tâm & Chuyên Nghiệp</span>',
+    teachers_sub:'Mỗi giáo viên được tuyển chọn kỹ lưỡng — không chỉ giỏi tiếng Anh mà còn truyền cảm hứng',
+    teachers_cta_t:'Muốn Học Với Giáo Viên Phù Hợp Nhất?',teachers_cta_d:'Tư vấn viên sẽ giúp bạn chọn giáo viên phù hợp với mục tiêu',
+    teachers_cta_btn:'Đặt Lịch Tư Vấn Miễn Phí',
+    footer_desc:'Trung tâm tiếng Anh cao cấp — đào tạo 2,500+ học viên với đội ngũ 15 giáo viên bản ngữ.',
+    footer_courses:'Khóa Học',footer_quick:'Thông Tin',footer_contact:'Liên Hệ',footer_cta:'Học Thử Miễn Phí',
+    footer_copy:'© 2026 Small World English Center. Bảo lưu mọi quyền.',
+    footer_privacy:'Chính Sách Bảo Mật',footer_terms:'Điều Khoản Dịch Vụ',
+    cookie_text:'Chúng tôi dùng cookies để cải thiện trải nghiệm. Bằng cách tiếp tục, bạn đồng ý.',
+    cookie_accept:'Đồng Ý',cookie_decline:'Từ Chối',
+    about_h1:'Câu Chuyện Small World',about_h1_sub:'8 năm kiến tạo thành công',
+    about_title:'Từ Ước Mơ <span>Nhỏ Bé</span> Đến Trung Tâm <span>Hàng Đầu</span>',
+    about_p1:'Small World được thành lập năm 2016 với niềm tin: mỗi người Việt Nam đều có thể giao tiếp tiếng Anh tự tin.',
+    about_p2:'Từ lớp học đầu tiên 12 học viên tại Long Xuyên, chúng tôi phát triển thành 4 cơ sở với hơn 2,500 học viên.',
+    our_story:'Câu Chuyện Của Chúng Tôi',vision_t:'Tầm Nhìn',vision_d:'Trở thành trung tâm tiếng Anh hàng đầu Việt Nam.',
+    mission_t:'Sứ Mệnh',mission_d:'Cung cấp môi trường học tập đẳng cấp quốc tế, kết hợp công nghệ tiên tiến.',
+    values_tag:'Giá Trị Cốt Lõi',values_title:'Những Gì <span>Chúng Tôi Tin</span>',
+    v1_t:'Chất Lượng Hàng Đầu',v1_d:'Không thỏa hiệp về chất lượng từ giáo viên đến dịch vụ.',
+    v2_t:'Tận Tâm Với Học Viên',v2_d:'Mỗi học viên là cá nhân đặc biệt — chúng tôi đồng hành trên từng bước.',
+    v3_t:'Phương Pháp Khoa Học',v3_d:'Áp dụng nghiên cứu ngôn ngữ học hiện đại và công nghệ AI.',
+    v4_t:'Phát Triển Liên Tục',v4_d:'Không ngừng học hỏi và cải tiến để đem trải nghiệm tốt nhất.',
+    v5_t:'Cộng Đồng Học Tập',v5_d:'Học viên Small World là một cộng đồng hỗ trợ lẫn nhau.',
+    v6_t:'Minh Bạch & Trung Thực',v6_d:'Cam kết rõ ràng — nếu không đạt, hoàn tiền hoặc học lại.',
+    cert_tag:'Chứng Nhận & Đối Tác',cert_title:'Được Công Nhận <span>Quốc Tế</span>',
+    cert1:'Trung Tâm Luyện Thi Chính Thức',cert2:'Đối Tác IELTS Chính Thức',cert3:'Cơ Sở Giáo Dục Được Cấp Phép',cert4:'Được đánh giá 4.9★ trên Google',
+    tl1_t:'Thành Lập',tl1_d:'Khai giảng lớp đầu tiên với 12 học viên',
+    tl2_t:'Mở Rộng',tl2_d:'Khai trương cơ sở thứ 2, đạt 300 học viên',
+    tl3_t:'Chứng Nhận Cambridge',tl3_d:'Được công nhận là Trung tâm luyện thi Cambridge chính thức',
+    tl4_t:'Top 10 Trung Tâm Anh Ngữ',tl4_d:'Vinh danh Top 10 Trung tâm tiếng Anh uy tín Long Xuyên, An Giang',
+    tl5_t:'2,500+ Học Viên',tl5_d:'4 cơ sở, ra mắt SmallWorld App độc quyền',
+    kids_hero_sub:'Chương trình đặc biệt cho bé 4–12 tuổi — học qua vui chơi',
+    kids_p:'Trẻ em học ngôn ngữ nhanh nhất trong giai đoạn 4–12 tuổi. Chúng tôi tận dụng "cửa sổ vàng" này.',
+    kids_f1:'Học Qua Trò Chơi',kids_f2:'Bài Hát & Nhảy Múa',kids_f3:'Dự Án Sáng Tạo',kids_f4:'Đọc Sách Tiếng Anh',
+    info_age:'Độ tuổi',info_class:'Sĩ số lớp',info_schedule:'Lịch học',info_duration:'Thời lượng',info_level:'Cấp độ',info_price:'Học phí',
+  },
+  en: {
+    nav_home:'Home',nav_about:'About Us',nav_courses:'Courses ▾',nav_teachers:'Teachers',
+    nav_blog:'Blog',nav_contact:'Contact',nav_faq:'FAQ',nav_trial:'Free Trial Class',
+    hero_tag:'Premium English Center in Long Xuyen, An Giang',
+    hero_title:'Open the Doors to the <span>World</span> with English',
+    hero_sub:'International curriculum standards — Certified native teachers — Practical, effective learning from day one.',
+    hero_cta1:'Free Trial Class',hero_cta2:'Learn More',
+    stat1:'Students',stat2:'Native Teachers',stat3:'% Satisfaction',stat4:'Years Experience',
+    trust1:'Cambridge Certified',trust2:'Native Teachers',trust3:'Results Guaranteed',
+    trust4:'0% Installment',trust5:'Free Makeup Classes',
+    courses_tag:'Our Programs',
+    courses_title:'4 <span>Specialized</span> Programs',
+    courses_sub:'Tailored for every learner — from 4-year-olds to senior executives',
+    c1_name:"Children's English",c1_age:'Ages 4–12',c1_f1:'Learn through play & music',c1_f2:'Correct pronunciation from early age',c1_f3:'Small classes ≤12 students',
+    c2_name:'Communicative English',c2_age:'13+ years old',c2_f1:'4 skills: Listening, Speaking, Reading, Writing',c2_f2:'Real-life situations',c2_f3:'Natural reflexes & fluency',
+    c3_name:'IELTS / TOEFL',c3_age:'Exam preparation',c3_f1:'Guaranteed 1.0 band score increase',c3_f2:'Real past papers weekly',c3_f3:'Teachers with IELTS 8.0+',
+    c4_name:'Business English',c4_age:'Working Professionals',c4_f1:'Presentations & negotiations',c4_f2:'Professional emails & reports',c4_f3:'Flexible morning/evening schedule',
+    per_month:'/month',try_free:'Register for Free Trial',
+    why_tag:'Why Choose Us?',why_title:'8+ Years Building <span>Success</span> Stories',
+    why_sub:'Small World does not just teach English — we build confidence and global communication skills.',
+    why1_t:'Results Guaranteed',why1_d:'If you do not reach your goal — 100% refund or free repeat',
+    why2_t:'Top-Quality Teachers',why2_d:'100% CELTA/DELTA certified teachers, minimum 5 years experience',
+    why3_t:'Exclusive Learning App',why3_d:'Practice anytime, anywhere with the SmallWorld App',
+    why4_t:'Recognized Certificates',why4_d:'Small World certificates recognized by employers and international schools',
+    learn_more:'Explore More →',result_title:'Real Results from Our Students',
+    r1:'of IELTS students reach their target band in 4 months',r2:'Salary increase after completing Business English',r3:'Faster progress compared to self-study',
+    book_trial:'Book a Free Consultation',
+    stats1:'Graduates',stats2:'Native Teachers',stats3:'Trung Tâm',stats4:'Years Experience',
+    testi_tag:'What Students Say',testi_title:'Thousands of <span>Success Stories</span>',
+    t1:'"My child went from fearing English to confidently presenting in front of class in just 6 months at Small World."',t1_role:'Parent of Kids class student',
+    t2:'"My IELTS went from 5.5 to 7.0 in 5 months — Small World is the only place where I truly progressed."',t2_role:'IELTS Student — Achieved Band 7.0',
+    t3:'"Got promoted and 50% salary increase after 8 months of Business English. Best investment I ever made!"',t3_role:'Business English — Marketing Manager',
+    blog_tag:'Blog & Knowledge',blog_title:'English Learning <span>Tips & Insights</span>',
+    b1:'7 Secrets to Score 7.0+ in IELTS Writing Task 2',b1_ex:'Proven strategies from hundreds of students who reached their target band...',
+    b2:"Teaching Kids English Through Games: The TPR Method",b2_ex:'Total Physical Response is the most scientific method for children to learn languages naturally...',
+    b3:'10 Professional English Phrases for Business Meetings',b3_ex:'Phrases that make you sound confident and professional in international meetings...',
+    read_more:'Read more →',
+    cta_title:'Ready to Start Your Journey?',cta_sub:'Sign up today — 1 free trial class, no commitment required.',
+    cta_btn1:'🎁 Free Trial Class',cta_btn2:'📞 Call for Advice',
+    modal_title:'Register for Free Trial Class',modal_sub:'Fill in your details — advisor will contact you within 30 minutes',
+    form_name:'Full Name *',form_phone:'Phone Number *',form_email:'Email',
+    form_interest:'Course of Interest',form_message:'Message',form_submit:'Send Inquiry →',
+    form_age_student:"Student's Age",form_course_choose:'Course *',form_schedule_pref:'Preferred Schedule',
+    form_goal:'Your English Goal',form_agree:'I agree to receive information from Small World',
+    modal_submit:'🎁 Confirm Free Trial Registration',
+    success_t:'Registration Successful!',success_d:'Our advisor will contact you within 30 minutes. See you at Small World!',success_btn:'Close',
+    contact_h1:'Contact Us',contact_h1_sub:'Our advisory team is available 7:00—21:00, 7 days a week',
+    contact_title:'Send a <span>Consultation Request</span>',contact_info_t:'Contact Information',
+    contact_success_t:'Request Received!',contact_success_d:'An advisor will contact you within 30 minutes.',
+    teachers_h1:'Our Teachers',teachers_h1_sub:'15 certified native teachers, CELTA/DELTA qualified',
+    teachers_tag:'Meet Our Team',teachers_title:'<span>Dedicated & Professional</span> Teachers',
+    teachers_sub:'Each teacher is carefully selected — not just for their English skills but their ability to inspire',
+    teachers_cta_t:'Want to Find Your Perfect Teacher?',teachers_cta_d:'Our advisors will match you with the best teacher for your goals',
+    teachers_cta_btn:'Book a Free Consultation',
+    footer_desc:'Premium English center — training 2,500+ students with a team of 15 certified native teachers.',
+    footer_courses:'Courses',footer_quick:'Information',footer_contact:'Contact',footer_cta:'Free Trial',
+    footer_copy:'© 2026 Small World English Center. All rights reserved.',
+    footer_privacy:'Privacy Policy',footer_terms:'Terms of Service',
+    cookie_text:'We use cookies to improve your experience. By continuing, you agree to our cookie policy.',
+    cookie_accept:'Accept',cookie_decline:'Decline',
+    about_h1:'The Small World Story',about_h1_sub:'8 years building success — 2,500+ students transformed',
+    about_title:'From a <span>Small Dream</span> to a <span>Leading Center</span>',
+    about_p1:'Small World was founded in 2016 with a deep belief: every Vietnamese person can communicate confidently in English.',
+    about_p2:'From our first class of 12 students in District 3, we grew to our campus across Long Xuyen, An Giang.',
+    our_story:'Our Story',vision_t:'Vision',vision_d:'To become the leading English center in Vietnam, empowering every student to connect with the world.',
+    mission_t:'Mission',mission_d:'Provide world-class learning environments, combining cutting-edge technology and teaching methods.',
+    values_tag:'Core Values',values_title:'What <span>We Believe In</span>',
+    v1_t:'Top Quality',v1_d:'We never compromise — from teachers to curriculum to student care.',
+    v2_t:'Student-First',v2_d:'Every student is a unique individual — we commit to walking every step with them.',
+    v3_t:'Scientific Method',v3_d:'Applying modern linguistics research and AI-powered personalized learning.',
+    v4_t:'Continuous Growth',v4_d:'We never stop learning and improving to deliver the best experience.',
+    v5_t:'Learning Community',v5_d:'Small World students form a community — supporting, growing together.',
+    v6_t:'Transparent & Honest',v6_d:'Clear commitment — if you do not achieve, we refund or provide free repeat.',
+    cert_tag:'Certifications & Partners',cert_title:'<span>Internationally</span> Recognized',
+    cert1:'Official Examination Center',cert2:'Official IELTS Partner',cert3:'Licensed Educational Institution',cert4:'Rated 4.9★ on Google Maps',
+    tl1_t:'Founded',tl1_d:'First class opened in District 3 with 12 students',
+    tl2_t:'Expansion',tl2_d:'Second campus opened, reached 300 students',
+    tl3_t:'Cambridge Certification',tl3_d:'Officially recognized as Cambridge Examination Center',
+    tl4_t:'Top 10 English Centers',tl4_d:'Honored as Top 10 most reputable English centers in HCMC',
+    tl5_t:'2,500+ Students',tl5_d:'our campus, launched exclusive SmallWorld App',
+    kids_hero_sub:'Special program for children aged 4–12 — learning through play',
+    kids_p:'Children learn languages fastest between ages 4–12. Our program leverages this "golden window".',
+    kids_f1:'Learning Through Play',kids_f2:'Songs & Movement',kids_f3:'Creative Projects',kids_f4:'English Reading',
+    info_age:'Age group',info_class:'Class size',info_schedule:'Schedule',info_duration:'Duration',info_level:'Level',info_price:'Tuition',
+  }
+};
+
+let currentLang = 'vi';
+
+function applyLang(lang) {
+  currentLang = lang;
+  const t = translations[lang];
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (t[key] !== undefined) el.innerHTML = t[key];
+  });
+  document.getElementById('langBtn').textContent = lang === 'vi' ? '🌐 EN' : '🌐 VI';
+  document.documentElement.lang = lang;
+}
+
+function toggleLang() {
+  applyLang(currentLang === 'vi' ? 'en' : 'vi');
+}
+
+// ── ROUTING ──
+function goPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  const target = document.getElementById('page-' + id);
+  if (target) {
+    target.classList.add('active');
+    window.scrollTo({top: 0, behavior:'smooth'});
+    observeFadeUps();
+    applyLang(currentLang);
+  }
+  // update active nav link
+  document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+}
+
+// ── MOBILE MENU ──
+function toggleMobile() {
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+
+// ── MODAL ──
+function openModal() {
+  document.getElementById('trialModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('trialModal').classList.remove('open');
+  document.body.style.overflow = '';
+  document.getElementById('modalForm').style.display = 'block';
+  document.getElementById('successMsg').style.display = 'none';
+}
+function submitTrial(e) {
+  e.preventDefault();
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('successMsg').style.display = 'block';
+}
+function submitContact(e) {
+  e.preventDefault();
+  document.getElementById('contactForm').style.display = 'none';
+  document.getElementById('contactSuccess').style.display = 'block';
+}
+document.getElementById('trialModal').addEventListener('click', function(e){
+  if(e.target === this) closeModal();
+});
+
+// ── FAQ ──
+function toggleFaq(btn) {
+  const item = btn.parentElement;
+  const wasOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!wasOpen) item.classList.add('open');
+}
+
+// ── BLOG FILTER ──
+function filterBlog(cat) {
+  document.querySelectorAll('#blogGrid .blog-card').forEach(c => {
+    c.style.display = (cat === 'all' || c.dataset.cat === cat) ? 'block' : 'none';
+  });
+  document.querySelectorAll('[id^="filter-"]').forEach(b => {
+    b.className = b.id === 'filter-'+cat ? 'btn btn-primary' : 'btn btn-outline';
+    b.style.padding = '8px 20px'; b.style.fontSize = '.85rem';
+  });
+}
+
+// ── COUNTERS ──
+function animateCount(el) {
+  const target = parseInt(el.getAttribute('data-count'));
+  let current = 0;
+  const step = Math.ceil(target / 60);
+  const timer = setInterval(() => {
+    current = Math.min(current + step, target);
+    el.textContent = current.toLocaleString();
+    if (current >= target) {
+      el.textContent = target.toLocaleString() + (target === 98 ? '' : '+');
+      clearInterval(timer);
+    }
+  }, 24);
+}
+
+// ── SCROLL ANIMATIONS ──
+function observeFadeUps() {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        // counter
+        e.target.querySelectorAll('[data-count]').forEach(animateCount);
+        io.unobserve(e.target);
+      }
+    });
+  }, {threshold: 0.12});
+  document.querySelectorAll('.fade-up:not(.visible)').forEach(el => io.observe(el));
+  document.querySelectorAll('[data-count]').forEach(el => {
+    const io2 = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if(e.isIntersecting){ animateCount(e.target); io2.unobserve(e.target); }});
+    }, {threshold:0.3});
+    io2.observe(el);
+  });
+}
+
+// ── NAVBAR SCROLL ──
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('mainNav');
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+  document.getElementById('backTop').classList.toggle('show', window.scrollY > 300);
+});
+
+// ── COOKIE ──
+function acceptCookie() { document.getElementById('cookieBanner').classList.remove('show'); }
+function declineCookie() { document.getElementById('cookieBanner').classList.remove('show'); }
+if (!localStorage.getItem('sw_cookie')) {
+  setTimeout(() => document.getElementById('cookieBanner').classList.add('show'), 2000);
+}
+document.querySelector('.cookie-accept')?.addEventListener('click', () => localStorage.setItem('sw_cookie','1'));
+
+// ── INIT ──
+window.addEventListener('DOMContentLoaded', () => {
+  observeFadeUps();
+  applyLang('vi');
+});
+</script>
+</body>
+</html>
